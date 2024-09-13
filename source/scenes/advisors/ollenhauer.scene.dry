@@ -1,13 +1,14 @@
 title: Erich Ollenhauer
 is-pinned-card: true 
 tags: advisor, reformist
-card-image: img/portraits/BreitscheidRudolf.jpg
+card-image: img/portraits/ollenhauer.png
 new-page: true
 view-if: ollenhauer_advisor = 1
 
 = Erich Ollenhauer
 
 Erich Ollenhauer is a long-time leader of the reformist faction. He is a good foreign policy advisor, and a proponent of party unity and pragmatic cooperation with the KPD.
+
 - @pragmatic_kpd
 - @ollenhauer_foreign
 - @promote_party_unity
