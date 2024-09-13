@@ -140,6 +140,15 @@ go-to: rm_main
 Muller has been removed as an advisor. The Labor faction disapproves.
 
 # left
+@remove_klement
+title: Remove Klement
+view-if: klement_advisor = 1
+choose-if: klement_advisor = 10
+unavailable-subtitle: You can't. You just can't.
+go-to: rm_main
+tags: remove_advisor
+
+Rudolf Klement is now an advisor.
 
 @remove_levi
 title: Remove Levi
