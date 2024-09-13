@@ -14,8 +14,8 @@ Kestermann is a reformist leader who supports cooperation with the Weimar partie
 - @root: Return to main
 
 @negotiate_zca
-title: Negotiate with the Weimar parties.
-subtitle: An emergency infusion of resources.
+title: Weimar Negotiations
+subtitle: Negotiate with the Weimar parties.
 view-if: difficulty < 1
 choose-if: advisor_action_timer = 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
@@ -24,9 +24,9 @@ on-arrival: advisor_action_timer = 6; coalition_dissent -= 1 if in_weimar_coalit
 Kestermann negotiates with the parties in a potential Weimar coalition, the Zentrum and the DDP. This will improve our chances of entering in a coalition with them and decrease coalition tension, if we are already in one.
 
 @defend_democracy
-title: Defend democracy in the Weimar republic.
-subtitle: -1 resources
-choose-if: resources > 0 and advisor_action_timer = 0
+title: Defend Democracy
+subtitle: Defend democracy in the Weimar republic. 
+choose-if: advisor_action_timer = 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if resources < 0: Not enough resources. ?]
 on-arrival: democratization += 1; pro_republic += 2*(1 - dissent); workers_nsdap -= 3; workers_dnvp -= 3; advisor_action_timer = 6;
 
