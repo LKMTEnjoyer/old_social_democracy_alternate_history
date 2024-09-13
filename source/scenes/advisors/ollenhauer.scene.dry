@@ -22,7 +22,7 @@ choose-if: advisor_action_timer == 0 and spd_in_government and foreign_minister_
 on-arrival: advisor_action_timer = 6; foreign_policy_timer -= 8;
 go-to: foreign_policy
 
-@Ollenhauer_foreign
+@ollenhauer_foreign
 title: Foreign Policy
 subtitle: As Foreign Minister, Ollenhauer can set our foreign policy.
 unavailable-subtitle: [? if not spd_in_government: The SPD is not in government. ?] [? if foreign_minister_party != "SPD" : The SPD does not control the Foreign Ministry. ?][? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
