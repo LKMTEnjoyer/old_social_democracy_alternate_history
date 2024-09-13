@@ -28,6 +28,6 @@ title: Defend Democracy
 subtitle: Defend democracy in the Weimar republic. 
 choose-if: advisor_action_timer = 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if resources < 0: Not enough resources. ?]
-on-arrival: democratization += 1; pro_republic += 2*(1 - dissent); workers_nsdap -= 3; workers_dnvp -= 3; advisor_action_timer = 6;
+on-arrival: democratization += 1; pro_republic += 4*(1 - dissent); workers_nsdap -= 3; workers_dnvp -= 3; advisor_action_timer = 6;
 
 Kestermann advocates for the protection of democracy and fighting the anti-democratic forces in the far-right. This improves the popular support of our republic and weakens the far-right parties. 
