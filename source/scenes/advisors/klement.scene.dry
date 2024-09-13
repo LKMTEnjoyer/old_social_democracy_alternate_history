@@ -1,7 +1,7 @@
 title: Rudolf Klement
 is-pinned-card: true
 tags: advisor, left
-card-image: img/portraits/Klement.png
+card-image: img/portraits/klement.png
 view-if: klement_advisor = 1
 new-page: true 
 
