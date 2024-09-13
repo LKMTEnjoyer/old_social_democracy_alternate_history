@@ -130,14 +130,14 @@ go-to: rm_main
 
 Aufhäuser has been removed as an advisor. The Labor faction disapproves.
 
-@remove_woytinsky
-title: Remove Woytinsky
-view-if: woytinsky_advisor = 1
+@remove_gmuller
+title: Remove Muller
+view-if: gmuller_advisor = 1
 tags: remove_advisor
-on-arrival: woytinsky_advisor = 0; labor_dissent += 3; n_advisors -= 1
+on-arrival: gmuller_advisor = 0; labor_dissent += 3; n_advisors -= 1
 go-to: rm_main
 
-Woytinsky has been removed as an advisor. The Labor faction disapproves.
+Muller has been removed as an advisor. The Labor faction disapproves.
 
 # left
 
@@ -499,17 +499,17 @@ go-to: advisor_menu
 
 Siegfried Aufhäuser is now an advisor.
 
-@add_woytinsky
-title: Wladimir Woytinsky
-subtitle: Wladimir Woytinsky is a former Russian Menshevik who is now the lead trade union economist.
+@add_gmuller
+title: Gunther Muller
+subtitle: Gunther Muller is a labour leader and one of the lead trade union economists, along with Reissner.
 is-card: true
 card-image: img/portraits/WoytinskyWladimir.jpg
 tags: labor_advisor
-view-if: woytinsky_advisor = 0 and n_advisors < 3 and unions_independent = 0
-on-arrival: woytinsky_advisor = 1; n_advisors += 1; labor_strength += 3
+view-if: gmuller_advisor = 0 and n_advisors < 3 and unions_independent = 0 and gmuller_scandal = 0
+on-arrival: gmuller_advisor = 1; n_advisors += 1; labor_strength += 3
 go-to: advisor_menu
 
-Wladimir Woytinsky is now an advisor.
+Gunther Muller is now an advisor.
 
 
 # neorevisionist leaders
