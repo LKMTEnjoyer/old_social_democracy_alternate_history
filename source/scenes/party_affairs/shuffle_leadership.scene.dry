@@ -347,7 +347,7 @@ title: Lars Schweneman
 subtitle: Lars Schweneman is a catholic labour leader from Baden.
 is-card: true
 card-image: img/portraits/Schweneman.png
-tags: labour_advisor
+tags: labor_advisor
 view-if: schweneman_advisor = 0 and n_advisors < 3 and centrists_resign = 0
 on-arrival: schweneman_advisor = 1; n_advisors += 1
 go-to: advisor_menu
