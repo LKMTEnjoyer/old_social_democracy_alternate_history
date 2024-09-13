@@ -13,7 +13,7 @@ Schweneman is a catholic Labour leader and economist from the province of Baden.
 - @leftist_infighting
 - @root: Return to main
 
-@organizing
+@catholic_workers
 title: Organizing Catholic workers
 subtitle: Improves our standing among Catholic workers.
 choose-if: advisor_action_timer <= 0
