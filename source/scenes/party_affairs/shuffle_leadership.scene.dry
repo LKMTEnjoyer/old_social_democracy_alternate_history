@@ -91,14 +91,14 @@ go-to: rm_main
 
 Braun has been removed as an advisor. The Reformist faction disapproves.
 
-@remove_juchacz
-title: Remove Juchacz
-view-if: juchacz_advisor = 1
+@remove_kestermann 
+title: Remove Kestermann 
+view-if: kestermann_advisor = 1
 tags: remove_advisor
-on-arrival: juchacz_advisor = 0; reformist_dissent += 5; n_advisors -= 1
+on-arrival: kestermann_advisor = 0; reformist_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Juchacz has been removed as an advisor. The Reformist faction disapproves.
+Kestermann has been removed as an advisor. The Reformist faction disapproves.
 
 @remove_pfulf
 title: Remove Pfülf
@@ -393,17 +393,17 @@ go-to: advisor_menu
 
 Otto Braun is now an advisor.
 
-@add_juchacz
-title: Marie Juchacz
-subtitle: Marie Juchacz is the founder of Worker's Welfare, a mutual-aid organization.
+@add_kestermann
+title: Clara Kestermann 
+subtitle: Clara Kestermann is a firm defender of the democratic republic and well-liked by the Weimar parties.
 is-card: true
-card-image: img/portraits/JuchaczMarie.jpg
-view-if: juchacz_advisor = 0 and n_advisors < 3
-on-arrival: juchacz_advisor = 1; n_advisors += 1; reformist_strength += 5
+card-image: img/portraits/kestermann.png
+view-if: kestermann_advisor = 0 and n_advisors < 3
+on-arrival: kestermann_advisor = 1; n_advisors += 1; reformist_strength += 5
 go-to: advisor_menu
 tags: reformist_advisor
 
-Marie Juchacz is now an advisor.
+Clara Kestermann is now an advisor.
 
 @add_pfulf
 title: Antonie Pfülf
