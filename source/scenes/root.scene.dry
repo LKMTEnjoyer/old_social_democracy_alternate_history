@@ -528,7 +528,7 @@ Q.juchacz_advisor = 0; // Marie Juchacz
 Q.baade_advisor = 0; // Fritz Baade
 
 // Labor advisors
-Q.leipart_advisor = 0; // Theodor Leipart
+Q.schweneman_advisor = 0; // Theodor Leipart
 Q.aufhauser_advisor = 0; // Siegfried Aufhäuser
 Q.gmuller_advisor = 0; // Wladimir Woytinsky (post-1930)
 
