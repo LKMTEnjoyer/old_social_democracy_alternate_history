@@ -1,32 +1,28 @@
-title: Paul Levi
+title: Rudolf Klement
 is-pinned-card: true
 tags: advisor, left
-card-image: img/portraits/LeviPaul.jpg
-view-if: levi_advisor = 1
+card-image: img/portraits/Klement.png
+view-if: klement_advisor = 1
 new-page: true 
 
-= Paul Levi
+= Rudolf Klement
 
-Levi is a former leader of the KPD who left over their devotion to violence and revolutionary adventurism.
+Klement is a Trotskyist who is somehow in the SPD. Wait, what's he doing? IS THAT A KNI-
 
-- @building_the_left
-- @kpd_cooperation
+- @assassination
 - @root: Return to main
 
-@building_the_left
-title: Building the Left
-subtitle: Push the SPD to the left.
+@assassination
+title: No...
+subtitle: Failed Assassination of Gunther Muller
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 choose-if: advisor_action_timer = 0
-on-arrival: advisor_action_timer = 6; left_strength += 10; left_dissent -= 8; reformist_dissent += 3
+on-arrival: advisor_action_timer = 6; left_dissent += 25; klement_arrested = 1; klement_advisor = 0; n_advisors -= 1; labour_strength += 10; labour_dissent += 15; reformist_dissent += 5; n
 
-We have increased the strength of the left faction with the SPD. This raised concern among the moderate reformists in the party.
+Rudolf Klement made an attempt this evening on Gunther Muller's life. Both men are members of the SPD but Muller in particular is the ADGB chairman. With the current referendum on his keeping of the chair on the way, tensions have been high with various rumors and attacks on Muller's record being circulated. Well now, an attack on Muller the person, with a body, has been made.
 
-@kpd_cooperation
-title: Cooperation with the KPD
-subtitle: Any cooperation between the parties requires compromise from the KPD as well as the SPD.
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
-choose-if: advisor_action_timer = 0
-on-arrival: advisor_action_timer = 6; left_strength += 5; kpd_relation += 6*(1-dissent); reformist_dissent += 3; communist_coalition += 1 if kpd_cooperation_seen <= 1; kpd_cooperation_seen += 1
+Inviting him to talk in private over dinner at Five-Finger Square, Klement was initially a no-show. But he charged out of an alleyway with a knife and a mask at the Labour-SPD leader before being tackled to the ground by security detail.
 
-Levi attempts to reach out to his former colleagues to dissuade the KPD from their current extreme Stalinist path. Some concessions are extracted.
+After being unmasked, he called Muller a "criminal" but at the moment, it is Herr Klement who is behind bars. As far as cases go, this one is open and shut.
+
+We wish Herr Muller a good day and hope he recovers from what must have been a shocking and traumatizing experience. 
