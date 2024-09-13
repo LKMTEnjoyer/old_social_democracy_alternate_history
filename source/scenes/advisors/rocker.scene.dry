@@ -59,7 +59,7 @@ Our campaign media is mostly reaching the workers who are already saturated with
 
 @ideological
 title: Publish articles to advocate for party unity.
-subtitle: The SPD must work together.
+subtitle: The SPD must work together for the common good.
 on-arrival: left_dissent -= 6; labor_dissent -= 6; center_dissent -= 6; reformist_dissent -= 6; neorevisionist_dissent -= 6
 
 Publishing articles to convince factions to work together smooths over the tension in our party.
