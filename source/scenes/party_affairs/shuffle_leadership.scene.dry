@@ -51,14 +51,14 @@ go-to: rm_main
 
 Rocker has been removed as an advisor. 
 
-@remove_muller
-title: Remove Müller
-view-if: muller_advisor = 1
+@remove_schweneman
+title: Remove Schweneman
+view-if: schweneman_advisor = 1
 tags: remove_advisor
-on-arrival: muller_advisor = 0; center_dissent += 5; n_advisors -= 1
+on-arrival: schweneman_advisor = 0; center_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Müller has been removed as an advisor. The Centrist faction disapproves.
+Schweneman has been removed as an advisor. The Labour faction disapproves.
 
 
 @remove_ollenhauer
@@ -342,17 +342,17 @@ go-to: advisor_menu
 
 Johannes Rocker is now an advisor.
 
-@add_muller
-title: Hermann Müller
-subtitle: Hermann Müller is the last Social Democratic Chancellor.
+@add_schweneman
+title: Lars Schweneman
+subtitle: Lars Schweneman is a catholic labour leader from Baden.
 is-card: true
-card-image: img/portraits/MüllerHermann.jpg
-tags: center_advisor
-view-if: muller_advisor = 0 and muller_dead = 0 and n_advisors < 3 and centrists_resign = 0
-on-arrival: muller_advisor = 1; n_advisors += 1
+card-image: img/portraits/Schweneman.png
+tags: labour_advisor
+view-if: schweneman_advisor = 0 and n_advisors < 3 and centrists_resign = 0
+on-arrival: schweneman_advisor = 1; n_advisors += 1
 go-to: advisor_menu
 
-Hermann Müller is now an advisor.
+Lars Schweneman is now an advisor.
 
 @add_ollenhauer
 title: Erich Ollenhauer
