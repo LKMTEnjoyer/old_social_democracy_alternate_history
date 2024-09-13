@@ -42,14 +42,14 @@ go-to: rm_main
 
 Hilferding has been removed as an advisor. The Centrist faction disapproves.
 
-@remove_wels
-title: Remove Wels
-view-if: wels_advisor = 1
+@remove_rocker
+title: Remove Rocker
+view-if: rocker_advisor = 1
 tags: remove_advisor
-on-arrival: wels_advisor = 0; center_dissent += 5; n_advisors -= 1
+on-arrival: rocker_advisor = 0; n_advisors -= 1
 go-to: rm_main
 
-Wels has been removed as an advisor. The Centrist faction disapproves.
+Rocker has been removed as an advisor. 
 
 @remove_muller
 title: Remove Müller
@@ -321,17 +321,17 @@ go-to: advisor_menu
 
 Rudolf Hilferding is now an advisor.
 
-@add_wels
-title: Otto Wels
-subtitle: Otto Wels is a long-time party organizer and member of the leadership, serving under Friedrich Ebert.
+@add_rocker
+title: Johannes Rocker
+subtitle: Johannes Rocker is a party administrator and editor of Vorwarts.
 is-card: true
-card-image: img/portraits/WelsRudolf.jpg
-tags: center_advisor
-view-if: wels_advisor = 0 and n_advisors < 3 and centrists_resign = 0
-on-arrival: wels_advisor = 1; n_advisors += 1
+card-image: img/portraits/rocker.png
+tags: nonfactional_advisor
+view-if: rocker_advisor = 0 and n_advisors < 3
+on-arrival: rocker_advisor = 1; n_advisors += 1
 go-to: advisor_menu
 
-Otto Wels is now an advisor.
+Johannes Rocker is now an advisor.
 
 @add_muller
 title: Hermann Müller
