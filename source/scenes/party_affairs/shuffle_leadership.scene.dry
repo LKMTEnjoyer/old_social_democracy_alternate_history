@@ -61,14 +61,14 @@ go-to: rm_main
 Müller has been removed as an advisor. The Centrist faction disapproves.
 
 
-@remove_breitscheid
-title: Remove Breitscheid
-view-if: breitscheid_advisor = 1
+@remove_ollenhauer
+title: Remove Ollenhauer
+view-if: ollenhauer_advisor = 1
 tags: remove_advisor
-on-arrival: breitscheid_advisor = 0; center_dissent += 5; n_advisors -= 1
+on-arrival: ollenhauer_advisor = 0; reformist_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Breitscheid has been removed as an advisor. The Centrist faction disapproves.
+Ollenhauer has been removed as an advisor. The Reformist faction disapproves.
 
 # reformists
 
@@ -345,15 +345,15 @@ go-to: advisor_menu
 
 Hermann Müller is now an advisor.
 
-@add_breitscheid
-title: Rudolf Breitscheid
-subtitle: Rudolf Breitscheid comes from a well-educated background and is one of our foreign policy leaders.
+@add_ollenhauer
+title: Erich Ollenhauer
+subtitle: Erich Ollenhauer is a leader of the reformists and one of our foreign policy leaders.
 is-card: true
 card-image: img/portraits/BreitscheidRudolf.jpg
-view-if: breitscheid_advisor = 0 and n_advisors < 3
-on-arrival: breitscheid_advisor = 1; n_advisors += 1
+view-if: ollenhauer_advisor = 0 and n_advisors < 3
+on-arrival: ollenhauer_advisor = 1; n_advisors += 1
 go-to: advisor_menu
-tags: center_advisor
+tags: reformist_advisor
 
 Rudolf Breitscheid is now an advisor.
 
