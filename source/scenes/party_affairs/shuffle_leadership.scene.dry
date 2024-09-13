@@ -349,13 +349,13 @@ Hermann Müller is now an advisor.
 title: Erich Ollenhauer
 subtitle: Erich Ollenhauer is a leader of the reformists and one of our foreign policy leaders.
 is-card: true
-card-image: img/portraits/BreitscheidRudolf.jpg
+card-image: img/portraits/Ollenhauer.png
 view-if: ollenhauer_advisor = 0 and n_advisors < 3
 on-arrival: ollenhauer_advisor = 1; n_advisors += 1
 go-to: advisor_menu
 tags: reformist_advisor
 
-Rudolf Breitscheid is now an advisor.
+Erich Ollenhauer is now an advisor.
 
 # reformist
 
