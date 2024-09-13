@@ -414,6 +414,18 @@ Antonie Pfülf is now an advisor.
 
 @add_levi
 title: Paul Levi
+subtitle: Rudolf Klement is a Trotskyist. Why we would ever make him an advisor is unclear.
+is-card: true
+card-image: img/portraits/Klement.jpg
+view-if: levi_advisor = 0 and klement_arrested = 0 and n_advisors < 3 and sapd_formed = 0
+on-arrival: klement_advisor = 1; n_advisors += 1; left_strength += 5
+go-to: advisor_menu
+tags: left_advisor
+
+Rudolf Klement is now an advisor.
+
+@add_levi
+title: Paul Levi
 subtitle: Paul Levi is a former KPD leader who was purged for criticizing Communist policies.
 is-card: true
 card-image: img/portraits/LeviPaul.jpg
