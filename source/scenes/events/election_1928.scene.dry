@@ -325,11 +325,11 @@ view-if: president == "Braun"
 go-to: popular_front_success
 
 @popular_front_success
-on-arrival: spd_in_government = 1; in_popular_front = 1; chancellor = "Breitscheid"; chancellor_party = "SPD"; kpd_relation += 10; coup_progress += 2; in_left_front = 0; in_weimar_coalition = 0; in_grand_coalition = 0; coalition_dissent = 0;
+on-arrival: spd_in_government = 1; in_popular_front = 1; chancellor = "Ollenhauer"; chancellor_party = "SPD"; kpd_relation += 10; coup_progress += 2; in_left_front = 0; in_weimar_coalition = 0; in_grand_coalition = 0; coalition_dissent = 0;
 go-to: popular_front_civil_war if coup_progress >= 10; popular_front_no_civil_war if coup_progress < 10
 achievement: volksfront
 
-Somehow, surprisingly, the coalition is successfully formed! We still need a chancellor; the only acceptable choice among the parties was Rudolf Breitscheid of the SPD, acceptable to the Center [? if president == "Hindenburg" : as well as President Hindenburg, albeit extremely reluctantly ?].
+Somehow, surprisingly, the coalition is successfully formed! We still need a chancellor; the only acceptable choice among the parties was Erich Ollenhauer of the SPD, acceptable to the Center as well as the KPD [? if president == "Hindenburg" : as well as President Hindenburg, albeit extremely reluctantly ?].
 
 @popular_front_no_civil_war
 on-arrival: kpd_goals_seen = 0; finance_minister_party = "Z"; interior_minister_party = "Z"; economy_minister_party = "Z"; labor_minister_party = "Z"; foreign_minister_party = "Z"; agriculture_minister_party = "Z"; reichswehr_minister = "I"; leverage += kpd_r
@@ -449,11 +449,11 @@ go-to: left_coalition_success
 
 
 @left_coalition_success
-on-arrival: spd_in_government = 1; in_left_front = 1; chancellor = "Breitscheid"; chancellor_party = "SPD"; coup_progress += 3; capital_strike_progress += 2; in_popular_front = 0; in_grand_coalition = 0; in_weimar_coalition = 0; kpd_relation += 10
+on-arrival: spd_in_government = 1; in_left_front = 1; chancellor = "Ollenhauer"; chancellor_party = "SPD"; coup_progress += 3; capital_strike_progress += 2; in_popular_front = 0; in_grand_coalition = 0; in_weimar_coalition = 0; kpd_relation += 10
 go-to: left_coalition_civil_war if coup_progress >= 10; left_coalition_no_civil_war if coup_progress < 10
 achievement: einheitsfront
 
-Somehow, surprisingly, the left coalition is successfully formed, without appointing Thälmann as chancellor. The consensus choice for chancellor, accepted by the SPD, KPD, and President [+ president +], is Rudolf Breitscheid, who belongs to the centrist faction of the SPD, but was acceptable to the left due to his previous membership in the left-wing anti-war USPD.
+Somehow, surprisingly, the left coalition is successfully formed, without appointing Thälmann as chancellor. The consensus choice for chancellor, accepted by the SPD, KPD, and President [+ president +], is Erich Ollenhauer, who belongs to the reformist faction of the SPD, but was acceptable to the left due to his policies of cooperation with the KPD.
 
 # just raise the coup limit, don't immediately go to civil war
 
@@ -675,7 +675,7 @@ Finally, the SPD can govern alone! Our long campaign of electioneering has paid 
 Who should be chancellor?
 
 - @braun_majority_chancellor: Otto Braun for Chancellor.
-- @breitscheid_majority_chancellor: Rudolf Breitscheid for Chancellor.
+- @ollenhauer_majority_chancellor: Erich Ollenhauer for Chancellor.
 - @muller_majority_chancellor: Hermann Müller for Chancellor.
 - @wels_majority_chancellor: Otto Wels for Chancellor.
 
@@ -686,10 +686,10 @@ on-arrival: chancellor = "Braun"
 [? if president == "Braun": Our experts have checked the constitution, and have discovered that there is no specific prohibition against the Chancellor also being the President (the President may not be a member of the Reichstag; there is no law saying that the Chancellor must be a member of the Reichstag). Thus, we have Chancellor-President Otto Braun. ?]
 [? if president != "Braun": Otto Braun has become chancellor of the SPD majority. ?]
 
-@breitscheid_majority_chancellor
-on-arrival: chancellor = "Breitscheid"
+@ollenhauer_majority_chancellor
+on-arrival: chancellor = "Ollenhauer"
 
-Rudolf Breitscheid has become chancellor of the SPD majority.
+Erich Ollenhauer has become chancellor of the SPD majority.
 
 @muller_majority_chancellor
 view-if: muller_dead = 0
@@ -730,7 +730,7 @@ on-arrival: sa_strength += 100; sh_strength += 100; in_emergency_government = 1;
 Yes, an emergency minority government, with the support of the SPD. Who should lead this emergency minority government?
 
 - @pugner_emergency_chancellor: Gerhard Pügner for an unifying figure.
-- @ollenhauer_emergency_chancellor: Rudolf Breitscheid for emergency Chancellor.
+- @ollenhauer_emergency_chancellor: Erich Ollenhauer for emergency Chancellor.
 - @bruning_emergency_chancellor: Brüning of the Center Party, as a goodwill gesture toward the bourgeoisie.
 
 @pugner_emergency_chancellor
@@ -738,16 +738,16 @@ subtitle: Zentrum and the DDP sees him as more acceptable.
 view-if: not historical_mode or not spd_prussia
 on-arrival: chancellor = "Pügner"; chancellor_party = "SPD"; z_relation += 5; z_relation += 5; spd_in_government = 1; foreign_minister_party = "SPD"; interior_minister_party = "SPD"; justice_minister_party = "SPD"; labor_minister_party = "SPD"; reichswehr_minister_party = "SPD"; economic_minister_party = "SPD"; finance_minister_party = "SPD"; agriculture_minister_party = "SPD"; reichswehr_loyalty -= 0.1; 
 
-We have appointed Gerhard Pügner as emergency chancellor. As he is on the reformist wing of the SPD, he is more acceptable to the Weimar parties than the more left-leaning Breitscheid.
+We have appointed Gerhard Pügner as emergency chancellor. As he is on the reformist wing of the SPD, he is more acceptable to the Weimar parties than Ollenhauer, who supports greater cooperation with the KPD.
 
 - @far_right_coup
 - @emergency_no_confidence: The Nazis immediately call a no-confidence vote against us...
 
-@breitscheid_emergency_chancellor
+@ollenhauer_emergency_chancellor
 subtitle: The Communists are warming to him...
-on-arrival: chancellor = "Breitscheid"; chancellor_party = "SPD"; spd_in_government = 1; kpd_relation += 5; foreign_minister_party = "SPD"; interior_minister_party = "SPD"; justice_minister_party = "SPD"; labor_minister_party = "SPD"; reichswehr_minister_party = "SPD"; economic_minister_party = "SPD"; finance_minister_party = "SPD"; agriculture_minister_party = "SPD"; reichswehr_loyalty -= 0.1;
+on-arrival: chancellor = "Ollenhauer"; chancellor_party = "SPD"; spd_in_government = 1; kpd_relation += 5; foreign_minister_party = "SPD"; interior_minister_party = "SPD"; justice_minister_party = "SPD"; labor_minister_party = "SPD"; reichswehr_minister_party = "SPD"; economic_minister_party = "SPD"; finance_minister_party = "SPD"; agriculture_minister_party = "SPD"; reichswehr_loyalty -= 0.1;
 
-We have appointed Rudolf Breitscheid as emergency chancellor. The Communists consider him less objectionable than the alternatives, although it is unclear whether they will tolerate this government.
+We have appointed Erich Ollenhauer as emergency chancellor. The Communists consider him less objectionable than the alternatives, although it is unclear whether they will tolerate this government.
 
 - @far_right_coup
 - @emergency_no_confidence
@@ -850,18 +850,18 @@ Who should be the chancellor?
 
 - @muller
 - @braun
-- @breitscheid_coalition_chancellor
+- @ollenhauer_coalition_chancellor
 - @wels
 - @z_chancellor
 
-@breitscheid_coalition_chancellor
-title: Rudolf Breitscheid for Chancellor
-subtitle: Breitscheid is viewed as friendlier towards the left of the SPD.
+@ollenhauer_coalition_chancellor
+title: Erich Ollenhauer for Chancellor
+subtitle: Ollenhauer is viewed as friendlier towards the KPD.
 view-if: year >= 1930
-on-arrival: chancellor = "Breitscheid"; chancellor_party = "SPD";
+on-arrival: chancellor = "Ollenhauer"; chancellor_party = "SPD";
 go-to: ministries
 
-Rudolf Breitscheid has been appointed chancellor.
+Erich Ollenhauer has been appointed chancellor.
 
 
 @grand_coalition
@@ -1213,10 +1213,10 @@ unavailable-subtitle: We do not have enough leverage.
 tags: mins_1928
 choose-if: leverage >= 10 
 view-if: foreign_minister_party != "SPD"
-on-arrival: leverage -= 10; foreign_minister_party = "SPD"; foreign_minister = "Breitscheid"
+on-arrival: leverage -= 10; foreign_minister_party = "SPD"; foreign_minister = "Ollenhauer"
 go-to: ministries
 
-Rudolf Breitscheid of the SPD has been appointed Foreign Minister.
+Erich Ollenhauer of the SPD has been appointed Foreign Minister.
 
 
 @agriculture
