@@ -121,14 +121,14 @@ go-to: rm_main
 
 Leipart has been removed as an advisor. The Labor faction disapproves.
 
-@remove_aufhauser
-title: Remove Aufhäuser
-view-if: aufhauser_advisor = 1
+@remove_reissner
+title: Remove Reissner
+view-if: reissner_advisor = 1
 tags: remove_advisor
-on-arrival: aufhauser_advisor = 0; labor_dissent += 5; n_advisors -= 1
+on-arrival: reissner_advisor = 0; labor_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Aufhäuser has been removed as an advisor. The Labor faction disapproves.
+Reissner has been removed as an advisor. The Labor faction disapproves.
 
 @remove_gmuller
 title: Remove Muller
@@ -496,17 +496,17 @@ go-to: advisor_menu
 
 Theodor Leipart is now an advisor.
 
-@add_aufhauser
-title: Siegfried Aufhäuser
-subtitle: Siegfried Aufhäuser is the leader of the AfA-Bund, the white-collar trade union federation.
+@add_reissner
+title: Anton Reissner
+subtitle: Anton Reissner is a economist and supporter of the MR-Plan.
 is-card: true
-card-image: img/portraits/AufhäuserSiegfried.jpg
+card-image: img/portraits/reissner.png
 tags: labor_advisor
-view-if: aufhauser_advisor = 0 and n_advisors < 3
-on-arrival: aufhauser_advisor = 1; n_advisors += 1; labor_strength += 5
+view-if: reissner_advisor = 0 and n_advisors < 3
+on-arrival: reissner_advisor = 1; n_advisors += 1; labor_strength += 5
 go-to: advisor_menu
 
-Siegfried Aufhäuser is now an advisor.
+Anton Reissner is now an advisor.
 
 @add_gmuller
 title: Gunther Muller
