@@ -150,6 +150,15 @@ tags: remove_advisor
 
 how???
 
+@remove_moldenhauer
+title: Remove Moldenhauer
+view-if: moldenhauer_advisor = 1
+tags: remove_advisor
+on-arrival: moldenhauer_advisor = 0; left_dissent += 5; n_advisors -= 1
+go-to: rm_main
+
+Moldenhauer has been removed as an advisor. The Leftist faction disapproves.
+
 @remove_gunther
 title: Remove Günther
 view-if: gunther_advisor = 1
@@ -432,6 +441,18 @@ go-to: advisor_menu
 tags: left_advisor
 
 Rudolf Klement is now an advisor.
+
+@add_moldenhauer
+title: Ernst Moldenhauer
+subtitle: Ernst Moldenhauer supports nationalization and is popular with workers in the Ruhr.
+is-card: true
+card-image: img/portraits/moldenhauer.png
+view-if: moldenhauer_advisor = 0 and n_advisors < 3 and sapd_formed = 0
+on-arrival: moldenhauer_advisor = 1; n_advisors += 1; left_strength += 5
+go-to: advisor_menu
+tags: left_advisor
+
+Ernst Moldenhauer is now an advisor.
 
 @add_gunther
 title: Roswald Günther
