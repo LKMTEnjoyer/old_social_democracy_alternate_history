@@ -529,6 +529,7 @@ Q.baade_advisor = 0; // Fritz Baade
 // Labor advisors
 Q.schweneman_advisor = 0; // Theodor Leipart
 Q.reissner_advisor = 0; // Siegfried Aufhäuser
+Q.reissner_dead = 0;
 Q.gmuller_advisor = 0; // Wladimir Woytinsky (post-1930)
 
 // Revisionist advisors
