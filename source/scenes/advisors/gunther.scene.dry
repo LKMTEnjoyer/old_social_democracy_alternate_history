@@ -1,7 +1,7 @@
 title: Roswald Günther
 is-pinned-card: true
 tags: advisor, left
-card-image: img/portraits/gunther.jpg
+card-image: img/portraits/gunther.png
 view-if: gunther_advisor = 1
 new-page: true 
 
