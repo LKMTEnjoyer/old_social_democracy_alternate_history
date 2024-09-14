@@ -7,7 +7,7 @@ new-page: true
 
 = Gerhard Pügner
 
-Gerhard Pügner is a leader of the reformist faction of the SPD. He is an expert on agricultural policy. [? if in_emergency_government == 1 and chancellor == "Pügner" : and the leader of the current emergency government ?]
+Gerhard Pügner is a leader of the reformist faction of the SPD. He is an expert on agricultural policy[? if in_emergency_government == 1 and chancellor == "Pügner" : and the leader of the current emergency government ?].
  
 - @agriculture
 - @rural_campaign
