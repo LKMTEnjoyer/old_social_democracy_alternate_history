@@ -168,14 +168,14 @@ go-to: rm_main
 
 Altenburg has been removed as an advisor. The Leftist faction disapproves.
 
-@remove_rosenfeld
-title: Remove Rosenfeld
-view-if: rosenfeld_advisor = 1
+@remove_isaak
+title: Remove Gnarpstein
+view-if: isaak_advisor = 1
 tags: remove_advisor
-on-arrival: rosenfeld_advisor = 0; left_dissent += 3; n_advisors -= 1
+on-arrival: isaak_advisor = 0; left_dissent += 3; n_advisors -= 1
 go-to: rm_main
 
-Rosenfeld has been removed as an advisor. The Leftist faction disapproves.
+Gnarpstein has been removed as an advisor. The Leftist faction disapproves.
 
 @remove_seydewitz
 title: Remove Seydewitz
@@ -457,17 +457,17 @@ tags: left_advisor
 
 Maria Altenburg is now an advisor.
 
-@add_rosenfeld
-title: Kurt Rosenfeld
-subtitle: Kurt Rosenfeld is a lawyer, anti-militarist activist, and Reichstag member.
+@add_isaak
+title: Isaak Gnarpstein
+subtitle: Isaak Gnarpstein is a member of the left faction.
 is-card: true
-card-image: img/portraits/RosenfeldKurt.jpg
-view-if: rosenfeld_advisor = 0 and n_advisors < 3 and sapd_formed = 0
-on-arrival: rosenfeld_advisor = 1; n_advisors += 1; left_strength += 5
+card-image: img/portraits/gnarpstein.png
+view-if: isaak_advisor = 0 and n_advisors < 3 and sapd_formed = 0
+on-arrival: isaak_advisor = 1; n_advisors += 1; left_strength += 5
 go-to: advisor_menu
 tags: left_advisor
 
-Kurt Rosenfeld is now an advisor.
+Isaak Gnarpstein is now an advisor.
 
 @add_seydewitz
 title: Max Seydewitz
