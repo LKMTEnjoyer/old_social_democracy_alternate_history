@@ -13,20 +13,100 @@ Gerhard Pügner is a leader of the reformist faction of the SPD. He is an expert
 - @police_affairs
 - @root: Return to main
 
-@prussian_bulwark
-title: Prussian Bulwark
-subtitle: Severing has influence over Prussian politics.
-choose-if: advisor_action_timer <= 0 and spd_prussia = 1
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not spd_prussia : The SPD is not in control of Prussia. ?]
-on-arrival: advisor_action_timer = 6; prussian_affairs_timer -= 6
+@force_policies
+title: Force through policies (no cooldown)
+subtitle: As the current leader of the emergency government, Pügner can use his emergency powers to implement policies.
+choose-if: in_emergency_government == 1 and chancellor == "Pügner"
+unavailable-subtitle: [? if not in_emergency_government : We are not in an emergency government. ?][? if in_emergency_government == 1 and not chancellor == "Pügner" : Pügner is not the leader of the emergency government. ?]
+on-arrival: pro_republic -= 5; dvp_relation -= 5; z_relation -= 5; ddp_relation -= 5; kpd_relation -= 5; coup_progress += 1; workers_spd -= 2*(1-dissent); new_middle_spd -= 2*(1-dissent); old_middle_spd -= 2*(1-dissent); rural_spd -= 2*(1-dissent); catholics_spd -= 2*(1-dissent); unemployed_spd -= 2*(1-dissent);
+
+Pügner uses the support of the president to push through policies. This is likely to be very unpopular amongst the other parties and the citizens.
+
+- @agricultural
+- @constitutional
+- @interior
+- @economic
+- @plan
+- @fiscal
+- @foreign
+- @homosexual_rights
+- @womens_rights
+- @judiciary
+- @labour_unrest
+- @military
+- @police
+- @prussian_affairs
+- @welfare
+
+@agricultural
+title: Agricultural Policy
+subtitle: We can focus on agricultural policies. 
+go-to: agricultural_policy
+
+@constitutional
+title: Constitutional Reform
+subtitle: We can start reforms to the constitution. 
+go-to: constitutional_reform
+
+@economic
+title: Economic Democracy
+subtitle: We can give more control over the economy to the workers. 
+go-to: economic_democracy
+
+@plan
+title: Economic Planning
+subtitle: We can implement economic plans.
+go-to: economic_policy
+
+@fiscal
+title: Fiscal Policy 
+subtitle: We can change our taxation policies.
+go-to: fiscal_policy
+
+@foreign
+title: Foreign Policy
+subtitle: We can manage our international relations.
+go-to: foreign_policy
+
+@homosexual_rights
+title: Homosexual Rights 
+subtitle: Zentrum and the DVP will be infuriated if we use emergency powers in this way.
+on-arrival: z_relation -= 10; dvp_relation -= 10;
+go-to: homosexual_rights
+
+@womens_rights
+title: Women's Rights
+subtitle: We can increase rights for women.
+go-to: womens_rights
+
+@judiciary
+title: Judiciary Reform
+subtitle: We can reform the corrupt judiciary.
+go-to: judiciary
+
+
+@labour_unrest
+title: Labor Unrest 
+subtitle: We can deal with labor unrest in the Ruhr.
+go-to: labor_affairs
+
+@military
+title: Military Policy
+subtitle: We can change our funding for the army.
+go-to: military_policy
+
+@police
+title: Police Affairs 
+subtitle: We can set our police policy. 
+go-to: police
+
+@prussian_affairs
+title: Prussian Affairs
+subtitle: We can implement policies in Prussia.
 go-to: prussian_affairs
 
-
-@police_affairs
-title: Police affairs 
-subtitle: We can set our police policy. 
-choose-if: advisor_action_timer == 0 and spd_in_government and interior_minister_party == "SPD"
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not spd_in_government : The SPD is not in government. ?][? if interior_minister_party != "SPD": The SPD does not have the Interior ministry. ?]
-on-arrival: advisor_action_timer = 6; police_timer -= 6
-go-to: police
+@welfare
+title: Social Welfare
+subtitle: We can adjust our welfare spending.
+go-to: social_welfare
 
