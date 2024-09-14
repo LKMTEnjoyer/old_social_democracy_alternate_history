@@ -1,14 +1,14 @@
-title: Carl Severing
+title: Gerhard Pügner
 is-pinned-card: true
 tags: advisor, reformist
-card-image: img/portraits/SeveringCarl.jpg
+card-image: img/portraits/pugner.png
 view-if: severing_advisor = 1
 new-page: true 
 
-= Carl Severing
+= Gerhard Pügner
 
-Severing has been Interior Minister for both the German Republic and for the state of Prussia, and his priority is using the security services to target the enemies of the republic.
-
+Gerhard Pügner is a leader of the reformist faction of the SPD. He is an expert on agricultural policy. [? if in_emergency_government == 1 and chancellor == "Pügner" : and the leader of the current emergency government ?]
+ 
 - @prussian_bulwark
 - @police_affairs
 - @root: Return to main
