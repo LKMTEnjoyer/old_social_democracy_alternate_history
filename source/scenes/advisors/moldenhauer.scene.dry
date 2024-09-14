@@ -1,0 +1,51 @@
+title: Ernst Moldenhauer
+is-pinned-card: true
+tags: advisor, left
+card-image: img/portraits/moldenhauer.png
+view-if: moldenhauer_advisor = 1
+new-page: true 
+
+= Ernst Moldenhauer
+
+Ernst Moldenhauer is a leader of the left who is well-respected in the SPD and famous with workers in the Rhine. A popular nickname for Moldenhauer is "The Lenin of Pilsners", apparently referring to his success at organizing workers in the Ruhr. Where the "Pilsners" part comes from is unknown.
+  
+- @building_the_left
+- @ruhr_organization
+- @crisis
+- @nationalization
+- @root: Return to main
+
+@building_the_left
+title: Building the Left
+subtitle: Push the SPD to the left.
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+choose-if: advisor_action_timer = 0
+on-arrival: advisor_action_timer = 6; left_strength += 10; left_dissent -= 8; reformist_dissent += 3
+
+We have increased the strength of the left faction with the SPD. This raised concern among the moderate reformists in the party.
+
+@ruhr_organization
+title: Organize Workers in the Ruhr
+subtitle: Moldenhauer will travel to the Ruhr to convince workers to support the SPD and the implementation of socialism.
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+choose-if: advisor_action_timer = 0
+on-arrival: advisor_action_timer = 6;  workers_spd += 4*(1-dissent); unemployed_spd += 3*(1-dissent) if left_strength > reformist_strength; socialism += 2*(1 - dissent); workers_spd += 2*(1-dissent) if nationalization_progress > 0; unemployed_spd += 2*(1-dissent) if nationalization_progress > 0; socialism += 2*(1 - dissent) if nationalization_progress > 0;
+
+Moldenhauer tries to convince the workers in the Ruhr, Germany's most industrialized region, to support the SPD. Through his efforts, many previously undecided workers and unemployed are swayed, and the popular support for socialism also rises. 
+[? if nationalization_progress > 0 : Starting on our program of nationalization increases our appeal to the workers, and it also helps to have some successful policies to point to when campaigning. ?] 
+
+@crisis
+title: Addressing the economic crisis
+subtitle: Moldenhauer can help support a left-wing economic program.
+choose-if: advisor_action_timer <= 0 and nationalization_adopted == 0 and black_thursday_seen == 1 and nationalization_support <= 3
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if black_thursday_seen == 0 : We are not currently in an economic crisis. ?][? if nationalization_adopted > 0 : We have already adopted the Left plan. ?]
+on-arrival: advisor_action_timer = 6;
+go-to: crisis_program.support_left
+
+@nationalization
+title: Carry out the nationalization plan.
+subtitle: If we are in government, we can nationalize businesses to weaken the impact of the depression.
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if nationalization_adopted == 0 : We have not yet adopted an economic plan. ?][? if spd_in_government == 0 : The SPD is not in government. ?][? if nationalization_progress >= 2 : We have already started implementing the plan. ?]
+choose-if: advisor_action_timer <= 0 and nationalization_adopted and spd_in_government and nationalization_progress <= 1
+on-arrival: advisor_action_timer = 6; economic_policy_timer -= 12
+go-to: economic_policy.nationalize_1 if nationalization_progress == 0; economic_policy.nationalize_2 if nationalization_progress == 1
