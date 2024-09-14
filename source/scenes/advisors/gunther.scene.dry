@@ -1,0 +1,12 @@
+title: Roswald Günther
+is-pinned-card: true
+tags: advisor, left
+card-image: img/portraits/gunther.jpg
+view-if: gunther_advisor = 1
+new-page: true 
+
+= Roswald Günther
+
+Günther is a leader of the Left faction.
+
+- @root: Return to main
