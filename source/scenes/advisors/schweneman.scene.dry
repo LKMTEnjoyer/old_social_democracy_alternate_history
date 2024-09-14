@@ -27,6 +27,6 @@ title: Cause leftist infighting
 subtitle: It's a tradition. Enough said.
 choose-if: advisor_action_timer <= 0 
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if black_thursday_seen == 0 : We are not currently in an economic crisis. ?][? if wtb_adopted > 0 : We have already adopted the WTB-Plan. ?]
-on-arrival: advisor_action_timer = 6; left_dissent += 10; labour_strength += 5; labour_dissent -= 5; reformist_dissent += 5; neorevisionist_dissent += 5; center_dissent += 5;
+on-arrival: advisor_action_timer = 6; left_dissent += 10; labor_strength += 5; labor_dissent -= 5; reformist_dissent += 5; neorevisionist_dissent += 5; center_dissent += 5;
 
 Schweneman attacks other factions in the SPD, especially the Left. This increases dissent, but strengthens the labour faction slightly. 
