@@ -150,23 +150,23 @@ tags: remove_advisor
 
 Rudolf Klement is now an advisor.
 
-@remove_levi
-title: Remove Levi
-view-if: levi_advisor = 1
+@remove_gunther
+title: Remove Günther
+view-if: gunther_advisor = 1
 tags: remove_advisor
-on-arrival: levi_advisor = 0; left_dissent += 5; n_advisors -= 1
+on-arrival: gunther_advisor = 0; left_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Levi has been removed as an advisor. The Leftist faction disapproves.
+Günther has been removed as an advisor. The Leftist faction disapproves.
 
-@remove_sender
-title: Remove Sender
-view-if: sender_advisor = 1
+@remove_altenburg
+title: Remove Altenburg
+view-if: altenburg_advisor = 1
 tags: remove_advisor
-on-arrival: sender_advisor = 0; left_dissent += 3; n_advisors -= 1
+on-arrival: altenburg_advisor = 0; left_dissent += 3; n_advisors -= 1
 go-to: rm_main
 
-Sender has been removed as an advisor. The Leftist faction disapproves.
+Altenburg has been removed as an advisor. The Leftist faction disapproves.
 
 @remove_rosenfeld
 title: Remove Rosenfeld
@@ -433,29 +433,29 @@ tags: left_advisor
 
 Rudolf Klement is now an advisor.
 
-@add_levi
-title: Paul Levi
-subtitle: Paul Levi is a former KPD leader who was purged for criticizing Communist policies.
+@add_gunther
+title: Roswald Günther
+subtitle: Roswald Günther is a leader of the Left faction.
 is-card: true
-card-image: img/portraits/LeviPaul.jpg
-view-if: levi_advisor = 0 and levi_dead = 0 and n_advisors < 3 and sapd_formed = 0
-on-arrival: levi_advisor = 1; n_advisors += 1; left_strength += 5
+card-image: img/portraits/gunther.png
+view-if: gunther_advisor = 0 and n_advisors < 3 and sapd_formed = 0
+on-arrival: gunther_advisor = 1; n_advisors += 1; left_strength += 5
 go-to: advisor_menu
 tags: left_advisor
 
-Paul Levi is now an advisor.
+Roswald Günther is now an advisor.
 
-@add_sender
-title: Toni Sender
-subtitle: Toni Sender is an anti-war and womens' rights advocate, and Reichstag member.
+@add_altenburg
+title: Maria Altenburg
+subtitle: Maria Altenburg is a member of the Left faction who was originally a wealthy noble.
 is-card: true
-card-image: img/portraits/SenderToni.jpg
-view-if: sender_advisor = 0 and n_advisors < 3
-on-arrival: sender_advisor = 1; n_advisors += 1; left_strength += 5
+card-image: img/portraits/altenburg.png
+view-if: altenburg_advisor = 0 and n_advisors < 3
+on-arrival: altenburg_advisor = 1; n_advisors += 1; left_strength += 5
 go-to: advisor_menu
 tags: left_advisor
 
-Toni Sender is now an advisor.
+Maria Altenburg is now an advisor.
 
 @add_rosenfeld
 title: Kurt Rosenfeld
