@@ -1,0 +1,42 @@
+title: Eco
+is-pinned-card: true
+tags: advisor, neorevisionist
+card-image: img/portraits/eco.png
+view-if: eco_advisor = 1
+new-page: true 
+
+= Eco
+
+Eco is the current leader of the neo-revisionists and most definitely not a Zentrum spy, those are false accusations!
+
+- @yell_kpd
+- @purge_neorevs
+- @cause_scandal
+- @root: Return to main
+
+@cause_scandal
+title: Cause a scandal
+subtitle: Eco is exposed as a spy!
+choose-if: advisor_action_timer == 0 
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: advisor_action_timer = 6; neorevisionist_strength -= 10; left_strength += 5; labor_dissent += 5; left_dissent += 5; neorevisionist_dissent += 5; center_dissent += 5; reformist_dissent += 5; workers_spd -= 3*(1 - dissent); unemployed_spd -= 3*(1-dissent);
+
+Eco is exposed as a ZCA spy by Beiden! This will cause internal dissent and a loss of party unity, while some voters may leave us. 
+
+@purge_neorevs
+title: Purge the Neo-revisionists
+subtitle: Some members will leave for other factions.
+choose-if: advisor_action_timer == 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: advisor_action_timer = 6; labour_strength += 5; left_strength += 5; neorevisionist_strength -= 15; neorevisionist_dissent = 0;
+
+Eco purges the Left-Neo-revisionists, lowering dissent from the rest of the faction. However, the prominent members of the Left-Neo-revisionists will defect to other factions. 
+
+@yell_kpd
+title: Yell at the KPD
+subtitle: Reject cooperation with the KPD.
+choose-if: peoples_party_support <= 4 and advisor_action_timer = 0 and peoples_party == 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: advisor_action_timer = 6; communist_coalition -= 1; kpd_relation -= 12;
+
+We will tell the KPD that we have no need for any cooperation with them. Naturally, this will lower their relations of us and make them much more reluctant to enter in a coalition.
