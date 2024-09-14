@@ -9,12 +9,13 @@ new-page: true
 
 Gerhard Pügner is a leader of the reformist faction of the SPD. He is an expert on agricultural policy. [? if in_emergency_government == 1 and chancellor == "Pügner" : and the leader of the current emergency government ?]
  
-- @prussian_bulwark
-- @police_affairs
+- @agriculture
+- @rural_campaign
+- @force_policies
 - @root: Return to main
 
 @force_policies
-title: Force through policies (no cooldown)
+title: Force Through Policies (no cooldown)
 subtitle: As the current leader of the emergency government, Pügner can use his emergency powers to implement policies.
 choose-if: in_emergency_government == 1 and chancellor == "Pügner"
 unavailable-subtitle: [? if not in_emergency_government : We are not in an emergency government. ?][? if in_emergency_government == 1 and not chancellor == "Pügner" : Pügner is not the leader of the emergency government. ?]
@@ -110,3 +111,20 @@ title: Social Welfare
 subtitle: We can adjust our welfare spending.
 go-to: social_welfare
 
+@agriculture
+title: Agricultural Policy
+subtitle: Pügner is an expert in rural affairs.
+choose-if: advisor_action_timer <= 0 and spd_in_government and agriculture_minister_party == "SPD"
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not spd_in_government : The SPD is not in government. ?][? if agriculture_minister_party != "SPD": The SPD does not have the Agriculture Ministry. ?]
+on-arrival: advisor_action_timer = 6; agricultural_policy_timer -= 6
+go-to: agricultural_policy
+
+
+@rural_campaign
+title: Rural Campaign
+subtitle: Try to campaign among the rural populace.
+choose-if: advisor_action_timer == 0 and rural_policy > 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if rural_policy == 0 : We have not enacted any rural policies. ?]
+on-arrival: advisor_action_timer = 6; rural_spd += 5*(1-dissent); peoples_party_support += 1
+
+We have increased our campaigning among farmers and the rural populace.
