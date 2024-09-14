@@ -199,14 +199,14 @@ go-to: rm_main
 
 Mierendorff has been removed as an advisor. The Neorevisionist faction disapproves.
 
-@remove_leber
-title: Remove Leber
-view-if: leber_advisor = 1
+@remove_eco
+title: Remove Eco
+view-if: eco_advisor = 1
 tags: remove_advisor
-on-arrival: leber_advisor = 0; neorevisionist_dissent += 3; n_advisors -= 1
+on-arrival: eco_advisor = 0; neorevisionist_dissent += 3; n_advisors -= 1
 go-to: rm_main
 
-Leber has been removed as an advisor. The Neorevisionist faction disapproves.
+Eco has been removed as an advisor. The Neorevisionist faction disapproves.
 
 @remove_schumacher
 title: Remove Schumacher
@@ -547,17 +547,17 @@ go-to: advisor_menu
 
 Kurt Schumacher is now an advisor.
 
-@add_leber
-title: Julius Leber
-subtitle: Julius Leber is a former Reichswehr officer who resigned in opposition to the Kapp coup attempt.
+@add_eco
+title: Eco
+subtitle: Eco is a leader of the neorevisionists who is extremely anti-communist.
 is-card: true
-card-image: img/portraits/LeberJulius.jpg
-view-if: leber_advisor = 0 and n_advisors < 3
-on-arrival: leber_advisor = 1; n_advisors += 1; neorevisionist_strength += 5
+card-image: img/portraits/eco.png
+view-if: eco_advisor = 0 and n_advisors < 3
+on-arrival: eco_advisor = 1; n_advisors += 1; neorevisionist_strength += 5
 go-to: advisor_menu
 tags: neorev_advisor
 
-Julius Leber is now an advisor.
+Eco is now an advisor.
 
 # Nonfactional advisors
 
