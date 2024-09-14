@@ -130,6 +130,15 @@ go-to: rm_main
 
 Reissner has been removed as an advisor. The Labor faction disapproves.
 
+@remove_ghost
+title: Remove the Ghost of Reissner
+view-if: ghost_advisor = 1
+tags: remove_advisor
+on-arrival: ghost_advisor = 0; labor_dissent += 5; n_advisors -= 1
+go-to: rm_main
+
+The Ghost of Reissner has been removed as an advisor. The Labor faction disapproves. Don't question it.
+
 @remove_gmuller
 title: Remove Muller
 view-if: gmuller_advisor = 1
@@ -523,11 +532,23 @@ subtitle: Anton Reissner is a economist and supporter of the MR-Plan.
 is-card: true
 card-image: img/portraits/reissner.png
 tags: labor_advisor
-view-if: reissner_advisor = 0 and n_advisors < 3
+view-if: reissner_advisor = 0 and n_advisors < 3 and reissner_dead = 0
 on-arrival: reissner_advisor = 1; n_advisors += 1; labor_strength += 5
 go-to: advisor_menu
 
 Anton Reissner is now an advisor.
+
+@add_ghost
+title: Ghost of Reissner
+subtitle: The Ghost of Reissner is a formerly-alive economist.
+is-card: true
+card-image: img/portraits/ghost.png
+tags: labor_advisor
+view-if: ghost_advisor = 0 and n_advisors < 3 and reissner_dead = 1
+on-arrival: ghost_advisor = 1; n_advisors += 1; labor_strength += 5
+go-to: advisor_menu
+
+The Ghost of Reissner is now an advisor. Don't question it.
 
 @add_gmuller
 title: Gunther Muller
