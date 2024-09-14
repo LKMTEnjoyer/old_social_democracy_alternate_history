@@ -18,9 +18,9 @@ The Reichstag elections are to be held now.
 @cancel_elections
 title: We cannot hold the elections now. Cancel the elections.
 subtitle: This is an anti-democratic move that may backfire.
-view-if: in_emergency_government == 1 and president == "Braun" and not presidential_powers
+view-if: in_emergency_government == 1 and president == "Braun" and chancellor = "Pügner" and not presidential_powers
 
-Since we are currently ruling as part of an emergency government, we may use quasi-constitutional trickery to significantly delay these elections, and continue governing via Article 48. This is likely to be extremely unpopular both with our base and with the other parties. However, this may be necessary to prevent the extremists from gaining power.
+Since we are currently ruling as part of an emergency government, we may use quasi-constitutional trickery to significantly delay these elections, and continue governing via Article 48. Pügner's actions will be extremely unpopular both with our base and with the other parties. However, this may be necessary to prevent the extremists from gaining power.
 
 - @cancel_elections_2: Yes, do it.
 - @election_algorithm: No, let's hold the elections.
@@ -729,18 +729,16 @@ on-arrival: sa_strength += 100; sh_strength += 100; in_emergency_government = 1;
 
 Yes, an emergency minority government, with the support of the SPD. Who should lead this emergency minority government?
 
-- @braun_emergency_chancellor: Otto Braun for Chancellor-President!
-- @breitscheid_emergency_chancellor: Rudolf Breitscheid for emergency Chancellor.
+- @pugner_emergency_chancellor: Gerhard Pügner for an unifying figure.
+- @ollenhauer_emergency_chancellor: Rudolf Breitscheid for emergency Chancellor.
 - @bruning_emergency_chancellor: Brüning of the Center Party, as a goodwill gesture toward the bourgeoisie.
 
-@braun_emergency_chancellor
-subtitle: This is unprecedented.
+@pugner_emergency_chancellor
+subtitle: Zentrum and the DDP sees him as more acceptable.
 view-if: not historical_mode or not spd_prussia
-on-arrival: chancellor = "Braun"; chancellor_party = "SPD"; spd_in_government = 1; pro_republic -= 5; foreign_minister_party = "SPD"; interior_minister_party = "SPD"; justice_minister_party = "SPD"; labor_minister_party = "SPD"; reichswehr_minister_party = "SPD"; economic_minister_party = "SPD"; finance_minister_party = "SPD"; agriculture_minister_party = "SPD"; reichswehr_loyalty -= 0.1; 
+on-arrival: chancellor = "Pügner"; chancellor_party = "SPD"; z_relation += 5; z_relation += 5; spd_in_government = 1; foreign_minister_party = "SPD"; interior_minister_party = "SPD"; justice_minister_party = "SPD"; labor_minister_party = "SPD"; reichswehr_minister_party = "SPD"; economic_minister_party = "SPD"; finance_minister_party = "SPD"; agriculture_minister_party = "SPD"; reichswehr_loyalty -= 0.1; 
 
-Our experts have checked the constitution, and have discovered that there is no specific prohibition against the Chancellor also being the President (the President may not be a member of the Reichstag; there is no law saying that the Chancellor *must* be a member of the Reichstag).
-
-Thus, we have Chancellor-President Otto Braun. He claims that he will resign as soon as the economic-political crisis is over. The right-wing parties, who were once clamoring to replace parliamentary rule with dictatorship or monarchy, are now clamoring for the restoration of democracy.
+We have appointed Gerhard Pügner as emergency chancellor. As he is on the reformist wing of the SPD, he is more acceptable to the Weimar parties than the more left-leaning Breitscheid.
 
 - @far_right_coup
 - @emergency_no_confidence: The Nazis immediately call a no-confidence vote against us...
