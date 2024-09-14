@@ -29,7 +29,7 @@ Pügner uses the support of the president to push through policies. This is like
 - @plan
 - @fiscal
 - @foreign
-- @homosexual_rights
+- @homosexual_rights__
 - @womens_rights
 - @judiciary
 - @labour_unrest
@@ -72,10 +72,10 @@ title: Foreign Policy
 subtitle: We can manage our international relations.
 go-to: foreign_policy
 
-@homosexual_rights
+@homosexual_rights__
 title: Homosexual Rights 
-choose-if: (progressive_coalition >= 50) and homosexual_rights < 3
-unavailable-subtitle: [? if (progressive_coalition < 50) : We do not have the majority support for this. ?][? if homosexual_rights >= 3 : All reforms for homosexual rights have been passed. ?] 
+choose-if: progressive_coalition >= 50 and homosexual_rights < 3
+unavailable-subtitle: [? if progressive_coalition < 50 : We do not have the majority support for this. ?][? if homosexual_rights >= 3 : All reforms for homosexual rights have been passed. ?] 
 subtitle: Zentrum and the DVP will be infuriated if we use emergency powers in this way.
 on-arrival: z_relation -= 10; dvp_relation -= 10;
 go-to: homosexual_rights
