@@ -16,7 +16,7 @@ title: No...
 subtitle: Failed Assassination of Gunther Muller
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 choose-if: advisor_action_timer = 0
-on-arrival: advisor_action_timer = 6; left_dissent += 25; klement_arrested = 1; klement_advisor = 0; n_advisors -= 1; labour_strength += 10; labour_dissent += 20; reformist_dissent += 15; neorevisionist_dissent += 15; center_dissent += 15;
+on-arrival: advisor_action_timer = 6; left_dissent += 25; klement_arrested = 1; klement_advisor = 0; n_advisors -= 1; labor_strength += 10; labor_dissent += 20; reformist_dissent += 15; neorevisionist_dissent += 15; center_dissent += 15;
 
 Rudolf Klement made an attempt this evening on Gunther Muller's life. Both men are members of the SPD but Muller in particular is the ADGB chairman. With the current referendum on his keeping of the chair on the way, tensions have been high with various rumors and attacks on Muller's record being circulated. Well now, an attack on Muller the person, with a body, has been made.
 
