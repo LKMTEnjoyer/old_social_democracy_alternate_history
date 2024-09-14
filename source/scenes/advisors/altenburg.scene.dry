@@ -30,3 +30,12 @@ choose-if: advisor_action_timer <= 0 and nationalization_adopted == 0 and black_
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if black_thursday_seen == 0 : We are not currently in an economic crisis. ?][? if nationalization_adopted > 0 : We have already adopted the Left plan. ?]
 on-arrival: advisor_action_timer = 6;
 go-to: crisis_program.support_left
+
+@attack_radio
+title: Radio Campaign
+subtitle: Attack Muller for his crimes on the radio.
+choose-if: advisor_action_timer <= 0 and radio > 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if radio == 0 : Our radio network has not been built up. ?]
+on-arrival: advisor_action_timer = 6; labor_strength -= radio*6; workers_spd += 3*(1-dissent); unemployed_spd += 3*(1-dissent); workers_spd += 2*(1-dissent) if radio  > 2; unemployed_spd += 2*(1-dissent) if radio > 2; old_middle_spd -= 2; new_middle_spd -= 2
+
+Altenburg goes on the offensive in the media, attacking Muller for his misdeeds in the radio. This will shift the perspective of the workers in the ADGB and weaken the labor faction.
