@@ -513,8 +513,7 @@ Q.hilferding_advisor = 1; // Rudolf Hilferding
 // left advisors
 Q.altenburg_advisor = 0; // Toni Sender
 Q.gunther_advisor = 0; // Paul Levi
-Q.levi_dead = 0;
-Q.rosenfeld_advisor = 0; // Kurt Rosenfeld
+Q.isaak_advisor = 0; // Kurt Rosenfeld
 Q.seydewitz_advisor = 0; // Max Seydewitz
 
 // centrist alternate advisors
