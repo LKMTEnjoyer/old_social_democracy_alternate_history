@@ -1,13 +1,13 @@
-title: Anton Reissner
+title: Ghost of Reissner
 is-pinned-card: true
 tags: advisor, labor
-card-image: img/portraits/reissner.png
-view-if: reissner_advisor = 1
+card-image: img/portraits/ghost.png
+view-if: ghost_advisor = 1
 new-page: true 
 
-= Anton Reissner
+= Ghost of Reissner
 
-Anton Reissner is a economist and theorist, famous for being one of the developers of the MR-Plan.
+Somehow, Anton Reissner's ghost stayed on to advise us after his unforturnate assassination. Don't question it...
 
 - @organizing
 - @depression
