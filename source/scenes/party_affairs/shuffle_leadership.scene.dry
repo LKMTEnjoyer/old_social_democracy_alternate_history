@@ -144,11 +144,11 @@ Muller has been removed as an advisor. The Labor faction disapproves.
 title: Remove Klement
 view-if: klement_advisor = 1
 choose-if: klement_advisor = 10
-unavailable-subtitle: You can't. You just can't.
+unavailable-subtitle: You can't. 
 go-to: rm_main
 tags: remove_advisor
 
-Rudolf Klement is now an advisor.
+how???
 
 @remove_gunther
 title: Remove Günther
@@ -426,7 +426,7 @@ title: Rudolf Klement
 subtitle: Rudolf Klement is a Trotskyist. Why we would ever make him an advisor is unclear.
 is-card: true
 card-image: img/portraits/Klement.png
-view-if: levi_advisor = 0 and klement_arrested = 0 and n_advisors < 3 and sapd_formed = 0
+view-if: klement_advisor = 0 and klement_arrested = 0 and n_advisors < 3 and sapd_formed = 0
 on-arrival: klement_advisor = 1; n_advisors += 1; left_strength += 5
 go-to: advisor_menu
 tags: left_advisor
