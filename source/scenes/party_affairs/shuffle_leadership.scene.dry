@@ -73,14 +73,14 @@ Ollenhauer has been removed as an advisor. The Reformist faction disapproves.
 # reformists
 
 
-@remove_severing
-title: Remove Severing
-view-if: severing_advisor = 1
+@remove_pugner
+title: Remove Pügner
+view-if: pugner_advisor = 1
 tags: remove_advisor
-on-arrival: severing_advisor = 0; reformist_dissent += 5; n_advisors -= 1
+on-arrival: pugner_advisor = 0; reformist_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Severing has been removed as an advisor. The Reformist faction disapproves.
+Pügner has been removed as an advisor. The Reformist faction disapproves.
 
 @remove_braun
 title: Remove Braun
@@ -378,17 +378,17 @@ Erich Ollenhauer is now an advisor.
 # reformist
 
 
-@add_severing
-title: Carl Severing
-subtitle: Carl Severing is a one-time Prussian interior minister and police reformer.
+@add_pugner
+title: Gerhard Pügner
+subtitle: Gerhard Pügner is a reformist leader.
 is-card: true
-card-image: img/portraits/SeveringCarl.jpg
+card-image: img/portraits/pugner.png
 tags: reformist_advisor
-view-if: severing_advisor = 0 and n_advisors < 3
-on-arrival: severing_advisor = 1; n_advisors += 1; reformist_strength += 5
+view-if: pugner_advisor = 0 and n_advisors < 3
+on-arrival: pugner_advisor = 1; n_advisors += 1; reformist_strength += 5
 go-to: advisor_menu
 
-Carl Severing is now an advisor.
+Gerhard Pügner is now an advisor.
 
 @add_braun
 title: Otto Braun
