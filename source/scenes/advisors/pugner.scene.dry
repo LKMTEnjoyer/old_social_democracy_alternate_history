@@ -2,7 +2,7 @@ title: Gerhard Pügner
 is-pinned-card: true
 tags: advisor, reformist
 card-image: img/portraits/pugner.png
-view-if: severing_advisor = 1
+view-if: pugner_advisor = 1
 new-page: true 
 
 = Gerhard Pügner
@@ -18,7 +18,7 @@ Gerhard Pügner is a leader of the reformist faction of the SPD. He is an expert
 title: Force Through Policies (no cooldown)
 subtitle: As the current leader of the emergency government, Pügner can use his emergency powers to implement policies.
 choose-if: in_emergency_government == 1 and chancellor == "Pügner"
-unavailable-subtitle: [? if not in_emergency_government : We are not in an emergency government. ?][? if in_emergency_government == 1 and not chancellor == "Pügner" : Pügner is not the leader of the emergency government. ?]
+unavailable-subtitle: [? if presidential_powers == 1 : Reforms to the power of the presidency have made this impossible. ?][? if not in_emergency_government : We are not in an emergency government. ?][? if in_emergency_government == 1 and not chancellor == "Pügner" : Pügner is not the leader of the emergency government. ?]
 on-arrival: pro_republic -= 5; dvp_relation -= 5; z_relation -= 5; ddp_relation -= 5; kpd_relation -= 5; coup_progress += 1; workers_spd -= 2*(1-dissent); new_middle_spd -= 2*(1-dissent); old_middle_spd -= 2*(1-dissent); rural_spd -= 2*(1-dissent); catholics_spd -= 2*(1-dissent); unemployed_spd -= 2*(1-dissent);
 
 Pügner uses the support of the president to push through policies. This is likely to be very unpopular amongst the other parties and the citizens.
@@ -46,6 +46,8 @@ go-to: agricultural_policy
 
 @constitutional
 title: Constitutional Reform
+choose-if: judicial_reform >= 4 and constitutional_reform < 3
+unavailable-subtitle: [? if judicial_reform < 4 : The reactionary judiciary will not allow this. ?][? if constitutional_reform >= 3 : All constitutional reforms have been passed. ?] 
 subtitle: We can start reforms to the constitution. 
 go-to: constitutional_reform
 
@@ -56,7 +58,9 @@ go-to: economic_democracy
 
 @plan
 title: Economic Planning
-subtitle: We can implement economic plans.
+choose-if: economic_plan > 0
+unavailable-subtitle: We have not yet adopted an economic plan.
+subtitle: We can implement economic plans to reduce unemployment.
 go-to: economic_policy
 
 @fiscal
@@ -71,6 +75,8 @@ go-to: foreign_policy
 
 @homosexual_rights
 title: Homosexual Rights 
+choose-if: (progressive_coalition >= 50) and homosexual_rights < 3
+unavailable-subtitle: [? if (progressive_coalition < 50) : We do not have the majority support for this. ?][? if homosexual_rights >= 3 : All reforms for homosexual rights have been passed. ?] 
 subtitle: Zentrum and the DVP will be infuriated if we use emergency powers in this way.
 on-arrival: z_relation -= 10; dvp_relation -= 10;
 go-to: homosexual_rights
@@ -84,7 +90,6 @@ go-to: womens_rights
 title: Judiciary Reform
 subtitle: We can reform the corrupt judiciary.
 go-to: judiciary
-
 
 @labour_unrest
 title: Labor Unrest 
@@ -103,6 +108,8 @@ go-to: police
 
 @prussian_affairs
 title: Prussian Affairs
+choose-if: spd_prussia = 1
+unavailable-subtitle: We are not in control of Prussia.
 subtitle: We can implement policies in Prussia.
 go-to: prussian_affairs
 
