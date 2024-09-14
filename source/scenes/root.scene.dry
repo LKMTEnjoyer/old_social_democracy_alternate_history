@@ -424,7 +424,7 @@ Q.spd_no_confidence = 0;
 Q.no_confidence_against_spd = 0;
 
 // Advisors/Leaders
-Q.n_advisors = 3;
+Q.n_advisors = 2;
 // timer - this decrements by 1 every turn, and is set to 5 whenever an advisor action is used, so that you can only use one advisor action every 5 months.
 // let's just put all of the timers here...
 // most party affairs and government affairs cards are on a timer.
@@ -502,7 +502,7 @@ Q.kpd_ultimatum_timer = 0;
 
 // all the initial advisors are centrists.
 Q.rocker_advisor = 1; // Otto Wels
-Q.muller_advisor = 1; // Hermann Müller
+Q.muller_advisor = 0; // Hermann Müller
 Q.muller_dead = 0;
 Q.muller_scandal = 0;
 Q.klement_arrested = 0;
