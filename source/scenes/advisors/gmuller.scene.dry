@@ -1,7 +1,7 @@
 title: Gunther Muller
 is-pinned-card: true
 tags: advisor, labor
-card-image: img/portraits/muller.png
+card-image: img/portraits/gmuller.png
 view-if: gmuller_advisor = 1 and muller_replaced = 0
 new-page: true 
 
