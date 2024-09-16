@@ -9,24 +9,33 @@ new-page: true
 
 Anton Reissner is a economist and theorist, famous for being one of the developers of the MR-Plan.
 
-- @organizing
+- @plan
+- @carry_out_policy
 - @depression
 - @root: Return to main
 
-@organizing
-title: Organizing workers
-subtitle: Improve our standing among the workers.
-choose-if: advisor_action_timer <= 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
-on-arrival: advisor_action_timer = 6; workers_spd += 4*(1-dissent); workers_spd += 3*(1-dissent) if wtb_adopted == 1; labor_strength += 2;
+@plan
+title: Adopt the WTB-plan!
+subtitle: Convincing the rest of the party to support the WTB-plan.
+choose-if: advisor_action_timer <= 0 and wtb_adopted == 0 and wtb_support >= 3 and black_thursday_seen and (not historical_mode or ((labor_strength >= center_strength) and (labor_strength >= left_strength) and (labor_strength >= reformist_strength)))
+on-arrival: advisor_action_timer = 6;
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if black_thursday_seen == 0 : We are not currently in an economic crisis. ?][? if wtb_adopted > 0 : We have already adopted the WTB-Plan. ?][? if wtb_support < 3 : There is not enough support for the WTB-Plan. ?][? if (labor_strength < center_strength or labor_strength < left_strength or labor_strength < reformist_strength) and historical_mode : The labor faction is not strong enough. ?]
+go-to: crisis_program.plan_adopted
 
-We have increased our organizing among the workers.
+@carry_out_policy
+title: Carry out the economic plan.
+subtitle: If we are in government, we can carry out a public works program such as the WTB-Plan.
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if wtb_adopted == 0 : We have not yet adopted an economic plan. ?][? if spd_in_government == 0 : The SPD is not in government. ?][? if works_program >= 2 : We have already started implementing the plan. ?]
+choose-if: advisor_action_timer <= 0 and wtb_adopted and spd_in_government and wtb_implemented <= 1
+on-arrival: advisor_action_timer = 6; economic_policy_timer -= 12
+go-to: economic_policy
+
 
 @depression
 title: Addressing the economic crisis
-subtitle: Formulate a plan to get us out of this mess.
-choose-if: advisor_action_timer <= 0 and wtb_adopted = 0 and black_thursday_seen
+subtitle: Formulate a plan to get us out of the economic crisis.
+choose-if: advisor_action_timer <= 0 and wtb_adopted == 0 and black_thursday_seen == 1 and wtb_support <= 3
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if black_thursday_seen == 0 : We are not currently in an economic crisis. ?][? if wtb_adopted > 0 : We have already adopted the WTB-Plan. ?]
 on-arrival: advisor_action_timer = 6; wtb_support += 2; center_dissent += 10; labor_strength += 1
 
-The MR-Plan, standing for its primary supporters Muller and Reissner, has been adopted as the unions' plan for getting us out of the depression. Reissner canvasses in favor of this policy throughout the party and the unions.
+The MR-plan, named for its primary supporters Muller and Reissner, has been adopted as the unions' plan for getting us out of the depression. Reissner canvasses in favor of this policy through the SPD and the unions.
