@@ -10,7 +10,7 @@ card-image: img/portraits/gmuller.png
 
 Leader of the ADGB, Gunther Muller, has been arrested today for breaking and entering. He reportedly searched another SPD member's house to find evidence of espionage. Of course, nothing was found and he was promptly arrested by the guards. 
 After his arrest, he apparently tried to escape, but managed to somehow hit his head on a windowsill in the process of jumping out a window. Somehow, the guards did not notice this, and his next attempt to escape brought him in close contact with the floor as he tripped on thin air. His last attempt to escape by trying to steal a gun from the guards was thwarted by a leg cramp at the worst possible moment.
-Though this may sound like a comedy to everyone, it wasn't as funny to Muller, as he found himself thrown in a jail cell. Of course, the public outroar is immense, and many are calling for him to resign. Most members of our own party in the Left faction are against him and even some from the reformist and centrist factions.
+Though this may sound like a comedy to you, it wasn't as funny to Muller, as he found himself thrown in a jail cell. Of course, the public outroar is immense, and many are calling for him to resign. Most members of our own party in the Left faction are against him and even some from the reformist and centrist factions.
 
 - @defend_media: Defend Muller in the media.
 - @muller_resign: Muller must resign.
@@ -25,7 +25,8 @@ The SPD starts a campaign of defending Muller in the newspapers and radios. Unfo
 @no
 on-arrival: spd_in_government = 0; in_grand_coalition = 0; left_dissent += 20; spd_toleration = 0; z_relation -= 10; dvp_relation -= 10; chancellor = "Brüning"; chancellor_party = "Z "; foreign_minister_party = "DVP"; interior_minister_party = "Z"; justice_minister_party = "I"; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = "DDP"; finance_minister_party = "DVP"; agriculture_minister_party = "Z"; next_election_time = time + 3 if next_election_time > time+3; next_election_month = month + 3 if next_election_time >= time+3; next_election_year = year if next_election_time >= time+3; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12; workers_spd -= 3; old_middle_spd -= 2; new_middle_spd -= 2; rural_spd -= 2; catholics_spd -= 2
 
-Since literally everyone hates Muller now, our coalition partners refuse to work with us anymore. In fact, they have gone so far as to call a vote of non-confidence on us, where every other party voted against us. We have lost support with our voters as well, as they do not want to be seen voting for a party with a criminal as a member. The Left faction is infuriated by the fact that we are still defending Muller, and they are attacking him in internal discussions as well.
+Since literally everyone hates Muller now, our coalition partners refuse to work with us anymore. In fact, they have gone so far as to call a vote of non-confidence, where every other party voted against us. We have lost support with our voters as well, as they do not want to be seen voting for a party with a criminal as a member. The Left faction is infuriated by the fact that we are still defending Muller, and they are attacking him in internal discussions.
+
 New elections have been set for [+ next_election_month : month +] [+ next_election_year +].
 
 @muller_resign
