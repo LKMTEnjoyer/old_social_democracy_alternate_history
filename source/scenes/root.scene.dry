@@ -508,7 +508,7 @@ Q.muller_scandal = 0;
 Q.klement_arrested = 0;
 // okay I know Arthur Crispien was a leader irl but i couldn't find much interesting about him...
 Q.crispien_advisor = 0; // Arthur Crispien
-Q.hilferding_advisor = 1; // Rudolf Hilferding
+Q.jaeger_advisor = 1; // Rudolf Hilferding
 
 // left advisors
 Q.altenburg_advisor = 0; // Toni Sender
