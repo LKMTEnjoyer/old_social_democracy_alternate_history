@@ -29,7 +29,7 @@ We have supported the Blue Hearts with more resources. This brings more workers 
 title: Anti-Inflation Measures
 subtitle: Jaegar pressures the Reichsbank to act against the high inflation rates.
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if black_thursday_seen == 0 : We are not currently in an economic crisis. ?]
-choose-if: spd_in_government = 0 and advisor_action_timer = 0 and black_thursday_seen == 0
+choose-if: spd_in_government = 0 and advisor_action_timer = 0 and black_thursday_seen == 1
 on-arrival: advisor_action_timer = 6; inflation += 4 if inflation <= -2; inflation -= 3 if inflation >= 4.5;
 
 We have implemented policies to reduce inflation and hopefully prevent the disaster of hyperinflation.
@@ -37,7 +37,7 @@ We have implemented policies to reduce inflation and hopefully prevent the disas
 @finance_ministry_
 title: Fiscal Policy
 subtitle: As a prominent economist in our party, Jaegar can influence our tax policies.
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if spd_in_government = 0 : SPD not in government: ?] [? if finance_minister_party != "SPD" : The SPD does not control the finance ministry. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if spd_in_government = 0 : SPD is not in government. ?] [? if finance_minister_party != "SPD" and spd_in_government = 1 : The SPD does not control the finance ministry. ?]
 choose-if: advisor_action_timer == 0 and spd_in_government == 1 and finance_minister_party == "SPD"
 on-arrival: advisor_action_timer = 6; fiscal_policy_timer -= 6
 go-to: fiscal_policy
