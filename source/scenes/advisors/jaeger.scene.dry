@@ -1,0 +1,52 @@
+title: Franz Jaeger
+is-pinned-card: true
+tags: advisor, centrist
+card-image: img/portraits/jaeger.png
+face-image: img/portraits/jaeger.png
+view-if: jaeger_advisor = 1
+new-page: true
+
+= Franz Jaeger
+
+Franz Jaeger is an economist and a leader of the Centrist faction. As an orthodox Marxist, he is against deficit spending and overinflation.
+
+- @blue_hearts
+- @anti_inflation
+- @finance_ministry_
+- @left_center
+- @root: Return to main
+
+@blue_hearts
+title: Support the Blue Hearts
+subtitle: Support the Blue Hearts, a worker's mutual aid organization. -1 resources
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if resources < 1 :  Not enough resources. ?]
+choose-if: advisor_action_timer = 0
+on-arrival: advisor_action_timer = 6; advisor_action_time = time; resources -= 1; workers_aid += 1; unemployed_spd += 3*(1 - dissent); workers_spd += 3*(1 - dissent); unemployed_spd += 3*(1 - dissent) if black_thursday_seen > 0;
+
+We have supported the Blue Hearts with more resources. This brings more workers and unemployed to our party. [? if black_thursday_seen > 0 : In an age of economic crisis, this will be helpful for improving our standing among the unemployed. ?]
+
+@anti_inflation
+title: Anti-Inflation Measures
+subtitle: Jaegar pressures the Reichsbank to act against the high inflation rates.
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if black_thursday_seen == 0 : We are not currently in an economic crisis. ?]
+choose-if: spd_in_government = 0 and advisor_action_timer = 0 and black_thursday_seen == 0
+on-arrival: advisor_action_timer = 6; inflation += 4 if inflation <= -2; inflation -= 3 if inflation >= 4.5;
+
+We have implemented policies to reduce inflation and hopefully prevent the disaster of hyperinflation.
+
+@finance_ministry_
+title: Fiscal Policy
+subtitle: As a prominent economist in our party, Jaegar can influence our tax policies.
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if spd_in_government = 0 : SPD not in government: ?] [? if finance_minister_party != "SPD" : The SPD does not control the finance ministry. ?]
+choose-if: advisor_action_timer == 0 and spd_in_government == 1 and finance_minister_party == "SPD"
+on-arrival: advisor_action_timer = 6; fiscal_policy_timer -= 6
+go-to: fiscal_policy
+
+@left_center
+title: Left-Center Unity
+subtitle: Encourage cooperation between the left and center wings of the party.
+choose-if: advisor_action_timer = 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: advisor_action_timer = 6; left_dissent -= 10; labor_dissent -= 5; center_dissent -= 10; reformist_dissent -= 10; neorevisionist_dissent -= 5
+
+We have reduced dissent among the party's factions.
