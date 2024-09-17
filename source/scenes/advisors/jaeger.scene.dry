@@ -28,8 +28,8 @@ We have supported the Blue Hearts with more resources. This brings more workers 
 @anti_inflation
 title: Anti-Inflation Measures
 subtitle: Jaegar pressures the Reichsbank to act against the high inflation rates.
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if black_thursday_seen == 0 : We are not currently in an economic crisis. ?]
-choose-if: spd_in_government = 0 and advisor_action_timer = 0 and black_thursday_seen == 1
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if spd_in_government = 0 : SPD is not in government. ?][? if black_thursday_seen == 0 : We are not currently in an economic crisis. ?]
+choose-if: spd_in_government = 1 and advisor_action_timer = 0 and black_thursday_seen == 1
 on-arrival: advisor_action_timer = 6; inflation += 4 if inflation <= -2; inflation -= 3 if inflation >= 4.5;
 
 We have implemented policies to reduce inflation and hopefully prevent the disaster of hyperinflation.
