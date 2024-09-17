@@ -36,7 +36,7 @@ on-arrival: works_program += 1; budget -= 3; workers_spd += 7*(1-dissent); worke
 @wtb_2_deficit
 title: Continue the implementation of the WTB-Plan.
 subtitle: -3 budget - we will enter a deficit.
-unavailable-subtitle: Unemployment is low enough that we should not do deficit spending.
+unavailable-subtitle: [? if unemployed <= 10 : Unemployment is low enough that the time for the WTB-Plan has passed. ?][? if jaeger_advisor == 1: Franz Jaeger opposes any type of deficit spending. ?]
 view-if: wtb_implemented > 2 and budget < 3 and budget >= -3
 choose-if: unemployed > 10
 on-arrival: works_program += 1; budget -= 3; workers_spd += 6*(1-dissent); workers += 2; unemployed -= 3 if unemployed > 8; unemployed_spd += 6*(1-dissent); workers_kpd -= 2; workers_nsdap -= 2; coalition_dissent += 1; capital_strike_progress += 1; wtb_implemented += 1; kpd_coalition_dissent += 1; kpd_relation -= 5 if in_popular_front or in_left_front; inflation += 3
@@ -71,9 +71,9 @@ We have started to enact the WTB plan. Money is beginning to flow through the ec
 @implement_wtb_deficit
 title: Implement the WTB plan.
 subtitle: -[+ wtb_budget +] budget - we will enter deficit spending. [? if wtb_budget == 3 : Our pro-labor policies have reduced the cost of the plan. ?]
-unavailable-subtitle: Unemployment is low enough that the time for the WTB-Plan has passed.
+unavailable-subtitle: [? if unemployed <= 8 : Unemployment is low enough that the time for the WTB-Plan has passed. ?][? if jaeger_advisor == 1: Franz Jaeger opposes any type of deficit spending. ?]
 view-if: budget < wtb_budget and wtb_implemented == 0 and wtb_adopted == 1
-choose-if: unemployed > 8
+choose-if: unemployed > 8 and jaeger_advisor == 0
 on-arrival: coalition_dissent += 1; works_program += 1; budget -= wtb_budget; unemployed -= 4; workers += 3; workers_spd += 8*(1-dissent); unemployed_spd += 8*(1-dissent); capital_strike_progress += 1; wtb_implemented += 1; kpd_coalition_dissent += 1; kpd_relation -= 5 if in_popular_front or in_left_front; inflation += 3
 achievement: wirtschaftspolitik
 
@@ -113,9 +113,9 @@ Unfortunately, we do not have the budget to begin buying out industrial faciliti
 
 @nationalize_deficit_1
 title: Take a budget deficit to fund the nationalization program.
-choose-if: left_strength > reformist_strength + center_strength or woytinsky_advisor == 1
-subtitle: [? if woytinsky_advisor: Woytinsky can bring us around to supporting a budget deficit. ?]
-unavailable-subtitle: [? if left_strength <= reformist_strength + center_strength: The party does not yet support budget deficits for this purpose. ?] [? if not woytinsky_advisor : Perhaps bringing on an advisor might help make this action palatable? ?]
+choose-if: (left_strength > reformist_strength + center_strength or woytinsky_advisor == 1) and jaeger_advisor == 0
+subtitle: [? if woytinsky_advisor and jaeger_advisor == 0: Woytinsky can bring us around to supporting a budget deficit. ?]
+unavailable-subtitle: [? if jaeger_advisor == 1: Franz Jaeger opposes any type of deficit spending. ?][? if left_strength <= reformist_strength + center_strength: The party does not yet support budget deficits for this purpose. ?] [? if not woytinsky_advisor : Perhaps bringing on an advisor might help make this action palatable? ?]
 on-arrival: nationalization_progress += 1; capital_strike_progress += 3; unemployed -= 3 if unemployed >= 6; unemployed -= 1.2 if works_councils >= 3; budget -= nationalize_budget; works_program += 1; workers_spd += 8*(1-dissent); unemployed_spd += 5*(1-dissent); coalition_dissent += 2; dvp_relation -= 6; z_relation -= 4; new_middle_spd -= 3; old_middle_spd -= 3; economy_goal_completed += 1; inflation += 3
 achievement: wirtschaftspolitik
 
