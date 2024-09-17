@@ -33,14 +33,14 @@ go-to: root
 tags: remove_advisor
 
 
-@remove_hilferding
-title: Remove Hilferding
-view-if: hilferding_advisor = 1
-on-arrival: hilferding_advisor = 0; center_dissent += 5; n_advisors -= 1
+@remove_jaeger
+title: Remove Jaeger
+view-if: jaeger_advisor = 1
+on-arrival: jaeger_advisor = 0; center_dissent += 5; n_advisors -= 1
 tags: remove_advisor
 go-to: rm_main
 
-Hilferding has been removed as an advisor. The Centrist faction disapproves.
+Jaeger has been removed as an advisor. The Centrist faction disapproves.
 
 @remove_rocker
 title: Remove Rocker
@@ -336,17 +336,17 @@ view-if: n_advisors < 3
 
 - #nonfactional_advisor
 
-@add_hilferding
-title: Rudolf Hilferding
-subtitle: Rudolf Hilferding is an economist and one of our chief Marxist theoreticians.
+@add_jaeger
+title: Franz Jaeger
+subtitle: Franz Jaeger is an economist and the founder of the Blue Hearts.
 is-card: true
-card-image: img/portraits/HilferdingRudolf.jpg
+card-image: img/portraits/jaeger.png
 tags: center_advisor
-view-if: hilferding_advisor = 0 and n_advisors < 3 and centrists_resign = 0
-on-arrival: hilferding_advisor = 1; n_advisors += 1
+view-if: jaeger_advisor = 0 and n_advisors < 3 and centrists_resign = 0
+on-arrival: jaeger_advisor = 1; n_advisors += 1
 go-to: advisor_menu
 
-Rudolf Hilferding is now an advisor.
+Franz Jaeger is now an advisor.
 
 @add_rocker
 title: Johannes Rocker
