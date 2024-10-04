@@ -32,7 +32,8 @@ go-to: foreign_policy.invade
 
 @secret
 title: Secretly build up the army to destroy the Austrians!
-subtitle: They will fall in front of the Reichswehr.
-choose-if: advisor_action_timer = 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not spd_in_government : The SPD is not in government. ?][? if reichswehr_minister_party != "SPD": The SPD does not have the Reichswehr ministry. ?]
+subtitle: They will fall in front of the Reichswehr. 
+choose-if: advisor_action_timer == 0 and spd_in_government and reichswehr_minister_party == "SPD"
 on-arrival: advisor_action_timer = 6
-go-to: military_policy.increase_funding
+go-to: military_policy
