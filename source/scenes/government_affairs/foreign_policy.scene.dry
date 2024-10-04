@@ -84,7 +84,7 @@ We also mention the KPD in our conversations with the Soviet ambassador. They cl
 title: Form a customs union with Austria?
 subtitle: This will likely incur the wrath of France.
 unavailable-subtitle: [? if eu = 1 : This is superseded by the European Union. ?][? if pug_advisor = 1 : Pug hates the Austrians, and he will never agree to form a customs union. ?] 
-choose-if: eu = 0
+choose-if: eu = 0 and pug_advisor = 1
 view-if: black_thursday_seen = 1 and customs_union = 0 and invaded_austria = 0
 
 The right has long desired closer ties with Austria, with the eventual goal of the merger of the two German-speaking countries. A customs union with Austria is the first step towards this goal. Additionally, many believe that a union with Austria would improve our current economic circumstances.
@@ -107,7 +107,7 @@ title: Invade Austria!
 subtitle: The international community will denounce us for this.
 unavailable-subtitle: [? if eu = 1 : This is prevented by the European Union. ?][? if opposition_austria < 5 : There is not enough support for a literal invasion of Austria. ?][? if build_up < 3 : Our army is not prepared enough. ?] 
 choose-if: eu = 0 and customs_union = 0 and opposition_austria >= 5 and build_up >= 3
-view-if: pug_advisor = 1
+view-if: pug_advisor = 1 and invaded_austria = 0
 
 This is Pug von Leibenhausen's dream. A world free of those pesky Austrians. We have to attack them at once.
 
