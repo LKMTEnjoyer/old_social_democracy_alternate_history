@@ -19,7 +19,7 @@ title: Rally against Austria
 subtitle: Against the %%%!
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 choose-if: advisor_action_timer = 0
-on-arrival: advisor_action_timer = 6; on-arrival: nationalism += 5*(1-dissent); pro_republic += 5*(1-dissent); opposition_austria += 1;
+on-arrival: advisor_action_timer = 6; nationalism += 5*(1-dissent); pro_republic += 5*(1-dissent); opposition_austria += 1;
 
 This increases the nationalism in our country, and it also increases the support for invading austria.
 
