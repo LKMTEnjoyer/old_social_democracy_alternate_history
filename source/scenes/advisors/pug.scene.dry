@@ -1,7 +1,7 @@
 title: Pug von Leibenhausen
 is-pinned-card: true
 tags: advisor, reformist
-card-image: img/portraits/pug.png
+card-image: img/portraits/pug.jpg
 view-if: pug_advisor = 1
 new-page: true 
 
