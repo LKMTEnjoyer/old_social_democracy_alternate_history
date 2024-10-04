@@ -8,9 +8,9 @@ max-visits: 1
 
 = Banking Crisis
 
-The Darmstädter und Nationalbank, or Danat Bank, has collapsed! Along with it goes much of the German banking system. The cause seemed to be due to the government's [? if invaded_austria = 0 : pursuit of a customs union with Austria][? if invaded_austria = 1 : invasion of Austria ?], which led to international sanctions [? if invaded_austria = 1 : and condemnation].
+The Darmstädter und Nationalbank, or Danat Bank, has collapsed! Along with it goes much of the German banking system. The cause seemed to be due to the government's [? if invaded_austria = 0 : pursuit of a customs union with Austria ?][? if invaded_austria = 1 : invasion of Austria ?], which led to international sanctions [? if invaded_austria = 1 : and condemnation].
 
-[? if invaded_austria = 0 : This is a bourgeois dispute, but the costs will be borne by the proletariat. ?][? if invaded_austria = 0 : Since it is we who declared war on Austria and caused this, the people are rightfully furious at us. ?] The people are facing ever-increasing hunger and poverty, and perhaps we are partly to blame.
+[? if invaded_austria = 0 : This is a bourgeois dispute, but the costs will be borne by the proletariat. ?][? if invaded_austria = 1 : Since it is we who declared war on Austria and caused this, the people are rightfully furious at us. ?] The people are facing ever-increasing hunger and poverty, and perhaps we are partly to blame.
 
 - @nothing_to_do: There is nothing we can do.
 - @stabilization: Take action to stabilize the economy!
