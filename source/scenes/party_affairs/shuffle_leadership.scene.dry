@@ -418,7 +418,7 @@ view-if: pug_advisor = 0 and n_advisors < 3
 on-arrival: pug_advisor = 1; n_advisors += 1; reformist_strength += 5
 go-to: advisor_menu
 
-Gerhard Pügner is now an advisor. He will start implementing anti-Austrian policies.
+Pug von Leibenhausen is now an advisor. He will start implementing anti-Austrian policies.
 
 @add_braun
 title: Otto Braun
