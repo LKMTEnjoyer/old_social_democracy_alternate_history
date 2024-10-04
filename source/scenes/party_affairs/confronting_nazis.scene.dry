@@ -50,6 +50,7 @@ What do the three arrows stand for?
 - @anti: Opposition to Fascism, Stalinism, and Monarchism.
 - @orgs: The SPD, ADGB, and Reichsbanner.
 - @wtb: Woytinsky, Tarnow, and Baade of the WTB-Plan
+- @antiaustrianism: Against Austria, Austrofascism, and the %%%!
 - @all: All of the above.
 
 @unity
@@ -64,6 +65,11 @@ go-to: if_end
 @wtb
 view-if: wtb_adopted == 1
 go-to: if_end
+
+@antiaustrianism
+choose-if: pug_advisor == 1
+go-to: if_end
+on-arrival: against_austria = 1
 
 @all
 go-to: if_end

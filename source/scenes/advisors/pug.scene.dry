@@ -1,0 +1,38 @@
+title: Pug von Leibenhausen
+is-pinned-card: true
+tags: advisor, reformist
+card-image: img/portraits/pug.png
+view-if: pug_advisor = 1
+new-page: true 
+
+= Pug von Leibenhausen
+
+Pug von Leibenhausen HATES AUSTRIANS, and he will do everything in his power to destroy them.
+
+- @attack_austria
+- @invade_
+- @secret
+- @root: Return to main
+
+@attack_austria
+title: Rally against Austria
+subtitle: Against the %%%!
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+choose-if: advisor_action_timer = 0
+on-arrival: advisor_action_timer = 6; on-arrival: nationalism += 5*(1-dissent); pro_republic += 5*(1-dissent); opposition_austria += 1;
+
+This increases the nationalism in our country, and it also increases the support for invading austria.
+
+@invade_
+title: Start our plan to invade Austria.
+subtitle: Finally. We will destroy the nefarious Austrian cabal.
+unavailable-subtitle: [? if eu = 1 : This is prevented by the European Union. ?][? if opposition_austria < 5 : There is not enough support for a literal invasion of Austria. ?][? if build_up < 3 : Our army is not prepared enough. ?] 
+choose-if: eu = 0 and customs_union = 0 and opposition_austria >= 5 and build_up >= 3
+go-to: foreign_policy.invade
+
+@secret
+title: Secretly build up the army to destroy the Austrians!
+subtitle: They will fall in front of the Reichswehr.
+choose-if: advisor_action_timer = 0
+on-arrival: advisor_action_timer = 6
+go-to: military_policy.increase_funding

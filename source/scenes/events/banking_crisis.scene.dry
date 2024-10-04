@@ -1,16 +1,16 @@
 title: Banking Crisis
 subtitle: The collapse of the German banking system...
 new-page: true
-on-arrival: banking_crisis_seen = 1; workers_kpd += 5; workers_nsdap += 3; new_middle_nsdap += 3; old_middle_nsdap += 4; rural_nsdap += 3; unemployed += 3; crisis_urgency += 1; workers_spd -= 4 if spd_in_government; new_middle_spd -= 5 if spd_in_government; old_middle_spd -= 5 if spd_in_government; rural_spd -= 4 if spd_in_government
+on-arrival: banking_crisis_seen = 1; workers_kpd += 5; workers_nsdap += 3; new_middle_nsdap += 3; old_middle_nsdap += 4; rural_nsdap += 3; unemployed += 3; crisis_urgency += 1; workers_spd -= 4 if spd_in_government; new_middle_spd -= 5 if spd_in_government; old_middle_spd -= 5 if spd_in_government; rural_spd -= 4 if spd_in_government; workers_spd -= 8 if invaded_austria; new_middle_spd -= 10 if invaded_austria; old_middle_spd -= 10 if invaded_austria; rural_spd -= 8 if invaded_austria
 tags: event
 view-if: customs_union = 1 and banking_crisis_timer = 0
 max-visits: 1
 
 = Banking Crisis
 
-The Darmstädter und Nationalbank, or Danat Bank, has collapsed! Along with it goes much of the German banking system. The cause seemed to be due to the government's pursuit of a customs union with Austria, which led to de facto international sanctions.
+The Darmstädter und Nationalbank, or Danat Bank, has collapsed! Along with it goes much of the German banking system. The cause seemed to be due to the government's [? if invaded_austria = 0 : pursuit of a customs union with Austria][? if invaded_austria = 1 : invasion of Austria ?], which led to international sanctions [? if invaded_austria = 1 : and condemnation].
 
-This is a bourgeois dispute, but the costs will be borne by the proletariat. The people are facing ever-increasing hunger and poverty, and perhaps we are partly to blame.
+[? if invaded_austria = 0 : This is a bourgeois dispute, but the costs will be borne by the proletariat. ?][? if invaded_austria = 0 : Since it is we who declared war on Austria and caused this, the people are rightfully furious at us. ] The people are facing ever-increasing hunger and poverty, and perhaps we are partly to blame.
 
 - @nothing_to_do: There is nothing we can do.
 - @stabilization: Take action to stabilize the economy!

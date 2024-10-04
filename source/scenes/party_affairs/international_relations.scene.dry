@@ -27,8 +27,8 @@ The socialists of France and Britain can influence their governments to be frien
 
 @austria
 subtitle: -1 resources
-choose-if: resources >= 1
-unavailable-subtitle: Not enough resources.
+choose-if: resources >= 1 and pug_advisor = 0
+unavailable-subtitle: [? if resources < 1 : We do not have enough resources. ?] [? if pug_advisor = 1 : Pug hates the Austrians, and he will never agree to work with the SDAPO. ?] 
 audio: shuffle music/communist/workers_of_vienna_normalized.mp3
 on-arrival: left_strength += 5; radicalization += 1; rb_militancy += 0.03; resources -= 1
 

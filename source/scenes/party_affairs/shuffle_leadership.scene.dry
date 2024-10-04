@@ -82,6 +82,15 @@ go-to: rm_main
 
 Pügner has been removed as an advisor. The Reformist faction disapproves.
 
+@remove_pug
+title: Remove Leibenhausen
+view-if: pug_advisor = 1
+tags: remove_advisor
+on-arrival: pug_advisor = 0; reformist_dissent += 5; n_advisors -= 1
+go-to: rm_main
+
+Leibenhausen has been removed as an advisor. The Reformist faction disapproves.
+
 @remove_braun
 title: Remove Braun
 view-if: braun_advisor = 1
@@ -398,6 +407,18 @@ on-arrival: pugner_advisor = 1; n_advisors += 1; reformist_strength += 5
 go-to: advisor_menu
 
 Gerhard Pügner is now an advisor.
+
+@add_pug
+title: Pug von Leibenhausen
+subtitle: Pug von Leibenhausen HATES AUSTRIANS
+is-card: true
+card-image: img/portraits/pug.png
+tags: reformist_advisor
+view-if: pug_advisor = 0 and n_advisors < 3
+on-arrival: pug_advisor = 1; n_advisors += 1; reformist_strength += 5
+go-to: advisor_menu
+
+Gerhard Pügner is now an advisor. He will start implementing anti-Austrian policies.
 
 @add_braun
 title: Otto Braun

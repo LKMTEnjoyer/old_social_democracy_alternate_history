@@ -19,8 +19,16 @@ The nationalist right has long yearned for closer ties with Austria, with the ev
 However, the Allies, especially France, are likely to object. This agreement would break the terms of the Versailles Treaty, and could lead to economic sanctions, further hurting our economy.
 
 - @let_it_happen: Let it happen.
+- @pug
 - @end_coalition: Stop this arrangement!
 - @end_toleration: Attempt to stop this arrangement!
+
+@pug
+title: Leibenhausen will attempt to convince them to stop this.
+view-if: pug_advisor = 1
+on-arrival: dvp_relation += 5; z_relation += 4;
+
+Somehow, Leibenhausen's rabid anti-Austrianism has convinced the bourgeoisie parties from this. Everyone is surprised, but it's not a bad outcome overall.
 
 @let_it_happen
 on-arrival: banking_crisis_timer = 2; customs_union = 1; west_relation -= 2; east_relation -= 2

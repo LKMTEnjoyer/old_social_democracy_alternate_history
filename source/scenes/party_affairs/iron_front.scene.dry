@@ -18,6 +18,7 @@ The Iron Front is our new antifascist coordination front, consisting of the SPD,
 - @republic: Rally to save the democratic republic against dictatorship.
 - @wtb: Rally for economic change and the WTB-Plan.
 - @antisemitism
+- @antiaustrianism
 - @easy_discard
 
 @defense
@@ -51,5 +52,13 @@ title: Rally against antisemitism and in defense of Jewish Germans.
 view-if: confronting_antisemitism > 1
 on-arrival: nationalism -= 4*(1-dissent); pro_republic += 3*(1-dissent); confronting_antisemitism += 1; workers_nsdap -= 4*(1-dissent); unemployed_nsdap -= 4*(1-dissent);
 
+@antiaustrianism
+title: Rally against the bloodthirsty Austrians, their fascist government, and the secret Austrial cabal that is controlling the world.
+view-if: against_austria = 1
+unavailable-subtitle: Leibenhausen is the main advocate for anti-Austrianism.
+choose-if: pug_advisor = 1
+on-arrival: nationalism += 4*(1-dissent); pro_republic += 5*(1-dissent); opposition_austria += 1;
+
+This galvanizes the SPD against Austria.
 # TODO
 The Nazis and other far-right political movements are increasingly turning their hatred against the Jewish community of Germany. The Iron Front rallies in defense of individual Jews and the broader community against violence.

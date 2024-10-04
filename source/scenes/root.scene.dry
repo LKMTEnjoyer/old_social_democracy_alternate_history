@@ -523,6 +523,13 @@ Q.ollenhauer_advisor = 0; // Rudolf Breitscheid
 
 // Reformist advisors
 Q.pugner_advisor = 0; // Carl Severing
+Q.pug_advisor = 0; // Carl Severing
+
+Q.opposition_austria = 0;
+Q.against_austria = 0;
+Q.build_up = 0;
+Q.invaded_austria = 0;
+
 Q.braun_advisor = 0; // Otto Braun
 Q.kestermann_advisor = 0; // Marie Juchacz
 Q.baade_advisor = 0; // Fritz Baade

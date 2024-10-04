@@ -16,6 +16,7 @@ What should our foreign policy priority be?
 - @improve_west
 - @improve_east
 - @improve_soviet
+- @invade
 - @customs_union
 - @negotiate
 - @reduce_reparations
@@ -82,7 +83,7 @@ We also mention the KPD in our conversations with the Soviet ambassador. They cl
 @customs_union
 title: Form a customs union with Austria?
 subtitle: This will likely incur the wrath of France.
-unavailable-subtitle: This is superseded by the European Union.
+unavailable-subtitle: [? if eu = 1 : This is superseded by the European Union. ?][? if pug_advisor = 1 : Pug hates the Austrians, and he will never agree to form a customs union. ?] 
 choose-if: eu = 0
 view-if: black_thursday_seen = 1 and customs_union = 0
 
@@ -101,6 +102,27 @@ We have formed a customs union with Austria! The right-wing parties are praising
 
 Immediately, France and other neighboring countries lodge their protests. The longer-term response is yet to be seen.
 
+@invade
+title: Invade Austria!
+subtitle: The international community will denounce us for this.
+unavailable-subtitle: [? if eu = 1 : This is prevented by the European Union. ?][? if opposition_austria < 5 : There is not enough support for a literal invasion of Austria. ?][? if build_up < 3 : Our army is not prepared enough. ?] 
+choose-if: eu = 0 and customs_union = 0 and opposition_austria >= 5 and build_up >= 3
+view-if: pug_advisor = 1
+
+This is Pug von Leibenhausen's dream. A world free of those pesky Austrians. We have to attack them at once.
+
+- @invade_2: Yes, do it!
+- @fp_menu: This is a stupid idea.
+
+@invade_2
+on-arrival: banking_crisis_timer = 2; west_relation -= 10; east_relation -= 10; invaded_austria = 1
+max-visits: 1
+
+We have just declared war on Austria! The Reichswehr has been secretly built up just for this purpose.
+
+Immediately, France and other neighboring countries lodge their protests. Poland and Czechoslovakia are now even more wary, due to our warmongering policies. The longer-term response is yet to be seen.
+
+- @invade_austria: We must plan out our strategy.
 
 @negotiate
 title: Negotiate regarding our remaining obligations from the Treaty of Versailles.

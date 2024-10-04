@@ -1,0 +1,111 @@
+title: Invasion of Austria
+on-arrival: {!
+Q.rb_strength = Math.round(Q.rb_strength);
+// re-calculate dissent, in case we transitioned from, say, the KPD support that raised reformist dissent.
+var total_strength = Q.left_strength + Q.center_strength + Q.labor_strength + Q.reformist_strength + Q.neorevisionist_strength;
+var total_dissent = Q.left_strength*Q.left_dissent + Q.center_strength*Q.center_dissent + Q.labor_strength*Q.labor_dissent + Q.reformist_strength*Q.reformist_dissent + Q.neorevisionist_strength*Q.neorevisionist_dissent;
+
+Q.dissent = 0.01*total_dissent/total_strength;
+console.log('new dissent: ' + Q.dissent);
+
+if (Q.dissent < 0) {
+    Q.dissent = 0;
+} else if (Q.dissent > 0.95) {
+    Q.dissent = 0.95;
+}
+
+// our allies
+Q.total_power = 0;
+// TODO:  lower reichsbanner strength if the party's popularity is very low.
+Q.rb_power = Q.rb_strength*Q.rb_militancy;
+if (Q.dissent > 0.15) {
+    Q.rb_power *= (1 - Q.dissent/1.5);
+}
+Q.total_power += Q.rb_power;
+Q.prussian_police_power = Q.prussian_police_strength*Q.prussian_police_militancy*Q.prussian_police_loyalty;
+if (Q.spd_prussia) {
+    Q.total_power += Q.prussian_police_power;
+}
+if (Q.reichswehr_loyalty < 0) {
+    Q.reichswehr_loyalty = 0;
+}
+Q.loyal_reichswehr_power = Q.reichswehr_strength*Q.reichswehr_militancy*Q.reichswehr_loyalty;
+if (Q.spd_in_government && Q.chancellor_party == "SPD") {
+    Q.total_power += Q.loyal_reichswehr_power;
+} else {
+    Q.total_power += Q.loyal_reichswehr_power/4;
+}
+
+console.log("Supporter strength:", Q.total_power);
+
+if (Q.total_power > 250*1.1) {
+    Q.republic_victory = 1;
+} else if (Q.total_power/250 >= 0.6) {
+    Q.long_war = 1;
+} else {
+    Q.total_defeat = 1;
+}
+
+Q.is_favorable = 0;
+if (Q.total_power >= 250*0.95) {
+    Q.is_favorable = 1;
+}
+!}
+go-to: war_menu
+
+= The Array of Forces
+
+Our enemies are the nationalist Stahlhelm, with [+ sh_strength +] thousand troops, and the Nazi SA, with [+ sa_strength +] thousand troops. The loyalties of the Reichswehr, with its [+ reichswehr_strength +] thousand regular soldiers, and Prussian police, with [+ prussian_police_strength +] thousand members, are unclear.
+
+[? if chancellor_party == "KPD" or president == "Thälmann" : The KPD's paramilitary, the RFB, is leading the battle, and we are their co-combatants. ?]
+
+On our side, we have the , at [+ reichswehr_strength +] thousand members. [? if dissent > 0.15 and dissent <= 0.25: It is somewhat weakened by dissent within the party, and some members choose not to fight. ?][? if dissent > 0.25 and dissent < 0.5: It is weakened by dissent within the party, and many members choose not to fight. ?][? if dissent >= 0.5: It is heavily weakened by dissent within the party, and a substantial portion of members choose not to fight. ?]
+
+[? if rb_militancy < 0.25 : Unfortunately, the Reichsbanner are poorly trained and equipped, and will not be able to stand against our more militarized opponents. ?][? if rb_militancy >= 0.25 and rb_militancy < 0.5 : We have spent some resources training and equipping the Reichsbanner. Let us hope our people can persist. ?][? if rb_militancy >= 0.5 : We have spent quite a great deal of resources on turning the Reichsbanner into a fighting force. Let us hope that they survive. ?]
+
+What else do we have?
+
+# note: many scenarios lead to civil war. This calculates the array of forces, and the possible outcomes.
+
+@war_menu
+
+- @rb_help: Use the reichsbanner as support.
+- @loyal_police: Use the loyal portions of the police as an auxillary force.
+- @war_outcome: Now, the battle...
+
+@rb_help
+max-visits: 1
+go-to: war_menu
+on-arrival: war_choices += 1; rb_strength -= 1000
+
+We have used the Reichsbanner in support roles, such as delivering supplies or treating the wounded. However, this is massively unpopular with the Reichsbanner, and many members are leaving.
+
+@loyal_police
+max-visits: 1
+go-to: war_menu
+on-arrival: war_choices += 1
+view-if: spd_prussia = 1
+
+Since we still control the Prussian government, we can call upon the Prussian police. [? if prussian_police_loyalty < 0.4 : Unfortunately, the police are politically unreliable at best. ?][? if prussian_police_loyalty >= 0.4 and prussian_police_loyalty < 0.65 : In this crucial hour, the Prussian police are split, with about half actively supporting our efforts. ?][? if prussian_police_loyalty >= 0.65 : Most join in supporting our efforts. Our efforts in cultivating republican loyalties in the police have proven their worth. ?]
+
+@war_outcome
+view-if: war_choices >= 2
+go-to: defeat if total_defeat = 1; republic_victory if long_war = 1; republic_victory if republic_victory = 1
+
+@defeat
+on-arrival: spd_in_government = 0; in_grand_coalition = 0; in_weimar_coalition = 0; chancellor = "Brüning"; chancellor_party = "Z"; next_election_time = time + 3 if next_election_time > time+3; next_election_month = month + 3 if next_election_time >= time+3; next_election_year = year if next_election_time >= time+3; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12; spd_toleration = 0; left_strength += 8; pro_republic -= 30; budget -= 2; left_dissent += 100; labor_dissent += 100; reformist_dissent += 100; center_dissent += 100; workers_spd -= 100; unemployed_spd -= 100; catholics_spd -= 100; rural_spd -= 100; new_middle_spd -= 100; old_middle_spd -= 100; z_relation -= 100; ddp_relation -= 100; dvp_relation -= 100; kpd_relation -= 100;
+
+= Total Defeat
+
+Surprisingly, our army is completely defeated by the Austrian Bundesheer. Sadly, we had to make concessions for a unfavourable peace, as we gave even more reparations and ceded the parts of Bavaria up to the River Linz. The outroar is immense, as almost every party and every citizen of Germany is furious at us for losing an easy war, as well as getting us into this in the first place.
+
+Our coalition partners have abandoned us, and new elections have been called. N ew elections have been set for [+ next_election_month : month +] [+ next_election_year +].
+
+@republic_victory
+
+= Victory for the Republic
+
+The battle lines hold, and the Austrian forces are defeated. Today, the forces of the republic prevail over the Austrians and the %%%. Leibenhausen is ecstatic, as his dreams of destroying Austria have finally been realized. However, France and the United Kingdom detest us now.
+
+- @root: Was it worth it, Leibenhausen? <br> Yes, anything is worth sacrificing to destroy the Austrian menace.
+
