@@ -97,15 +97,16 @@ on-arrival: spd_in_government = 0; in_grand_coalition = 0; in_weimar_coalition =
 
 = Total Defeat
 
-Surprisingly, our army is completely defeated by the Austrian Bundesheer. Sadly, we had to make concessions for a unfavourable peace, as we gave even more reparations and ceded the parts of Bavaria up to the River Linz. The outroar is immense, as almost every party and every citizen of Germany is furious at us for losing an easy war, as well as getting us into this in the first place.
+Surprisingly, our army is completely defeated by the Austrian Bundesheer, which is only about 20000 troops. Sadly, we had to make concessions for a unfavourable peace, as we gave even more reparations and ceded the parts of Bavaria up to the River Linz. The outroar is immense, as almost every party and every citizen of Germany is furious at us for losing an easy war, as well as getting us into this in the first place.
 
-Our coalition partners have abandoned us, and new elections have been called. N ew elections have been set for [+ next_election_month : month +] [+ next_election_year +].
+Our coalition partners have abandoned us, and new elections have been called. New elections have been set for [+ next_election_month : month +] [+ next_election_year +].
 
 @republic_victory
+achievement: anschluss
 
 = Victory for the Republic
 
-The battle lines hold, and the Austrian forces are defeated. Today, the forces of the republic prevail over the Austrians and the %%%. Leibenhausen is ecstatic, as his dreams of destroying Austria have finally been realized. However, France and the United Kingdom detest us now.
+The battle lines hold, and the Austrian forces are defeated. Today, the forces of the republic prevail over the Austrians and the %%%. However the international community, and especially France and the United Kingdom, detest us now. We can expect sanctions for our blatant expansionism. But for now, Leibenhausen is ecstatic, as his dreams of destroying Austrian menace have finally been realized.
 
-- @root: Was it worth it, Leibenhausen? <br> Yes, anything is worth sacrificing to destroy the Austrian menace.
+- @root: Anything is worth sacrificing to destroy the Austrians.
 
